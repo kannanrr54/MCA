@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>My college</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="Reg.css">
+    <style>
+         .input
+        {
+            border-radius: 3px;
+            float: left;
+            width: 100%;
+            
+        }
+        .button
+        {
+            padding: 10px;
+            width: 75%;
+            border-radius: 20px;
+            border:1px solid rgb(94, 155, 94);
+            background-color: rgb(94, 155, 94);
+            color: white;
+        }
+    </style>
+</head>
+<body><br><br><br><br>
+       <center>
+           <h2>Registration form</h2>
+        <form>
+            <table>
+                <tr>
+                    <td><input type="text" placeholder="First Name" class="input"/></td>
+                    <td><input type="text" placeholder="Last Name" class="input"/></td>
+                </tr>
+                <tr>
+                    <td>Date Of Birth :</td>
+                    <td><input type="date" class="input"></td>
+                </tr>
+                <tr>
+                    <td>Gender :</td>
+                    <td><input type="radio" value="Male" id="male" checked="true">
+                        <label for="male">Male</label><br>
+                        <input type="radio" value="Female" id="male">
+                        <label for="male">Female</label><br></td>
+                </tr>
+                <tr>
+                    <td>Languages Known :</td>
+                    <td><input type="checkbox" value="c" id="c" checked="true">
+                        <label for="c">C</label><br>
+                        <input type="checkbox" value="c++" id="c++">
+                        <label for="c++">C++</label><br>
+                        <input type="checkbox" value="p" id="p">
+                        <label for="p">Python</label><br></td></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><textarea cols="50"  rows="3" placeholder="Address" class="input"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Select Country : </td>
+                    <td><select class="input">
+                        <option value="" ></option>
+                        <option value="India" >India</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td>Select State : </td>
+                    <td><select class="input">
+                        <option value="" ></option>
+                        <option value="Kerala" >Kerala</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><input type="reset" value="Reset" class="button"/></td>
+                    <td><input type="submit" value="Submit" class="button"/></td>
+                </tr>
+                
+            </table>     
+        </form> 
+       </center>
+</body>
+</html>
