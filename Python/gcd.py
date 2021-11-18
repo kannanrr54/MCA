@@ -6,9 +6,8 @@ if(a<b):
     g=b
 else:
     g=a
-for i in range(g,1):
+for i in range(g,1,-1):
     if(a%i==0 and b%i==0):
-        print(i)
         gcd=i
         break
-print(gcd)
+print("GCD of ",a,"&",b," is ",gcd)
