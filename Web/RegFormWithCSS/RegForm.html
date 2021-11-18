@@ -7,9 +7,11 @@
     <style>
          .input
         {
-            border-radius: 3px;
+            border-radius: 5px;
+border:0px solid #FF6600;
+	padding:10px;
             float: left;
-            width: 100%;
+            width: 100%;	
             
         }
         .button
@@ -21,30 +23,45 @@
             background-color: rgb(94, 155, 94);
             color: white;
         }
+p
+{
+font-family:Sans-serif;
+font-weight: bold;
+}
+.button,.input:hover
+{
+border:1px solid green;
+}
     </style>
 </head>
 <body><br><br><br><br>
        <center>
-           <h2>Registration form</h2>
+<div class="outer">
+           <h2><p>Registration form</p></h2>
         <form>
+
             <table>
                 <tr>
                     <td><input type="text" placeholder="First Name" class="input"/></td>
                     <td><input type="text" placeholder="Last Name" class="input"/></td>
                 </tr>
+<tr>
+                    <td><p>Mobile Number    :</p></td>
+                    <td><input type="number" placeholder="Number" class="input"/></td>
+                </tr>
                 <tr>
-                    <td>Date Of Birth :</td>
+                    <td><p>Date Of Birth     :</p></td>
                     <td><input type="date" class="input"></td>
                 </tr>
                 <tr>
-                    <td>Gender :</td>
+                    <td><p>Gender :</p></td>
                     <td><input type="radio" value="Male" id="male" checked="true">
                         <label for="male">Male</label><br>
                         <input type="radio" value="Female" id="male">
                         <label for="male">Female</label><br></td>
                 </tr>
                 <tr>
-                    <td>Languages Known :</td>
+                    <td><p>Languages Known :</p></td>
                     <td><input type="checkbox" value="c" id="c" checked="true">
                         <label for="c">C</label><br>
                         <input type="checkbox" value="c++" id="c++">
@@ -56,25 +73,30 @@
                     <td colspan="2"><textarea cols="50"  rows="3" placeholder="Address" class="input"></textarea></td>
                 </tr>
                 <tr>
-                    <td>Select Country : </td>
+                    <td><p>Select Country : </p></td>
                     <td><select class="input">
                         <option value="" ></option>
                         <option value="India" >India</option>
                     </select></td>
                 </tr>
                 <tr>
-                    <td>Select State : </td>
+                    <td><p>Select State : <p></td>
                     <td><select class="input">
                         <option value="" ></option>
                         <option value="Kerala" >Kerala</option>
                     </select></td>
                 </tr>
+<tr>
+                    <td><p>Upload Photo : </p></td>
+                    <td><input type="file" placeholder="Number" class="input"/></td>
+                </tr>
                 <tr>
                     <td><input type="reset" value="Reset" class="button"/></td>
-                    <td><input type="submit" value="Submit" class="button"/></td>
+                    <td><input type="submit" value="Submit" class="button" style="float:right;"/></td>
                 </tr>
                 
-            </table>     
+            </table> 
+</div>    
         </form> 
        </center>
 </body>
