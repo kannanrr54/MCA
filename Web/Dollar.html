@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+   <form>
+       <input type="number" placeholder="Enter Rupees" id="f"/>
+       <button onclick="convert()">Convert</button>
+       <input type="number" placeholder="Dollar Amt" id="s"/>
+   </form>
+    <script>
+        function convert()
+        {
+            var dlr=document.getElementById("f").innerHTML;
+            document.write(dlr);
+            document.getElementById(s).setAttribute("value",dlr*72.26);
+        } 
+    </script>
+</body>
+</html>
