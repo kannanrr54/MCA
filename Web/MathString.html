@@ -4,12 +4,15 @@
     <title>My college</title>
 </head>
 <body>
-    <input type="text" id="x" onchange="sq()">
+    <input type="text" id="x" placeholder="Enter number to get square" onchange="sq()">
+    <input type="text" id="x" placeholder="Enter number to get square" onchange="sq()">
+    <input type="text" id="x" placeholder="Enter number to get square" onchange="sq()">
+    <input type="text" id="x" placeholder="Enter number to get square" onchange="sq()">
     <script>
         function sq()
         {
             var d=document.getElementById("x").value
-            document.getElementById("x").value=d*d;
+            document.getElementById("x").value=Math.sq(d);
         }
 
     </script>
