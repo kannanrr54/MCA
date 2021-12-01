@@ -1,0 +1,87 @@
+<html>
+<head>
+</head>
+<body>
+    <center>
+        <div style="border: 1px solid black;width:40%;padding:20px">
+            <table>
+                <form onsubmit="Validate()">
+                    <tr>
+                        <td>Enter Name : </td>
+                        <td><input type="text" placeholder="Name" class="input" id="name"/></td>
+                    </tr>
+                    <tr>
+                        <td><p>Mobile Number    :</p></td>
+                        <td><input type="number" placeholder="number" class="input" /></td>
+                    </tr>
+                    <tr>
+                        <td><p>Date Of Birth     :</p></td>
+                        <td><input type="date" class="input" id="dob"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder="Username"></td>
+                        <td><input type="text" placeholder="Password" ></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><center><input type="submit" value="Submit" ></center></td>
+                    </tr>
+                </form> 
+            </table>
+            <div>
+    </center>   
+<script>
+function Validate()
+{
+    var msg="";
+    var error=0;
+    var r=/^[a-zA-Z]$/;
+    var name =document.getElementById("name");
+    var dob=document.getElementById("number");
+    var number=document.getElementById("dob");
+    var Username=document.getElementById("Username");
+    var pass=document.getElementById("Password");
+    if(name.value == ""){
+        msg+="Enter the name\n";
+        name.focus();
+        error=1;
+    }
+    else
+    {
+     if (!r.test(name.value))
+     {
+        msg+="Name should be only alphabets\n";
+        error=1;
+     }
+    }
+    if(dob.vlaue!="")
+    {
+        msg+="Enter the DOB\n";
+        dob.focus();   
+        error=1;
+    }
+    else{
+        if(parseInt(dob.value.split('-')[0])<2021)
+     {
+        msg+="Enter a valid date\n";
+        error=1;
+     }
+    }
+    if(number.value=="")
+    {
+        msg+="Enter the number\n";
+        number.focus();   
+        error=1;  
+    }
+    else{
+        if(number.value.toString().length != 10)
+        {
+            msg+="Enter valid number\n";
+            error=1;  
+        }
+    }
+     
+    alert(msg);
+}
+</script>
+</body>
+</html>
