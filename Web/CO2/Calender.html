@@ -1,0 +1,44 @@
+<html>
+<head>
+</head>
+<style>
+    td{
+        border:1px solid black;
+        padding:20px;
+    }
+</style>
+<body>
+        <input type="number" id="year">
+        <button onclick="cal()">Dislpay Calender</button>
+<script>
+    function cal()
+    { 
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var x=0;
+        var table=document.createElement("table");
+        for(var s=0;s<months.length;s++)
+        {
+            for(var i=0;i<6;i++)
+            {
+                var row=document.createElement("tr");
+                for(var j=0;j<8;j++)
+                {  
+                    x++;
+                    if(x>31)
+                    {
+                        break;
+                    }
+                    var col=document.createElement("td");
+                    col.innerHTML=x;
+                    row.appendChild(col);
+                    table.appendChild(row);
+                }
+            }
+            document.body.append(table);
+        }
+        
+        
+    }
+</script>
+</body>
+</html>
