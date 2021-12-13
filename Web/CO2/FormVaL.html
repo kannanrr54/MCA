@@ -8,19 +8,23 @@
                 <form onsubmit="Validate()">
                     <tr>
                         <td>Enter Name : </td>
-                        <td><input type="text" placeholder="Name" class="input" id="name" required=""/></td>
+                        <td><input type="text" placeholder="Name" id="name" required=""/></td>
                     </tr>
                     <tr>
                         <td><p>Mobile Number    :</p></td>
-                        <td><input type="number" placeholder="number" class="input" id="num" required=""/></td>
+                        <td><input type="number" placeholder="number"  required="" id="num"/></td>
+                    </tr>
+                    <tr>
+                        <td><p>Email   :</p></td>
+                        <td><input type="text" placeholder="Email"  required="" id="email"/></td>
                     </tr>
                     <tr>
                         <td><p>Date Of Birth     :</p></td>
                         <td><input type="date" class="input" id="dob" required=""></td>
                     </tr>
                     <tr>
-                        <td><input type="text" placeholder="Username" required=""></td>
-                        <td><input type="text" placeholder="Password" required=""></td>
+                        <td><input type="text" placeholder="Username" required="" id="Username"></td>
+                        <td><input type="text" placeholder="Password" required="" id="Password"></td>
                     </tr>
                     <tr>
                         <td colspan="2"><center><input type="submit" value="Submit" ></center></td>
@@ -34,20 +38,22 @@ function Validate()
 {
     var msg="";
     var error=0;
-    var r=/^[a-zA-Z]$/;
-    var s=/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    var r=/^[a-zA-Z]{3, }$/;
+    var s=/^[!@#$%&*()_+=|<>?{}\\[\\]~-]$/;
+    var e=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     var name =document.getElementById("name");
-    var dob=document.getElementById("dob");
     var number=document.getElementById("num");
+    var dob=document.getElementById("dob");
     var Username=document.getElementById("Username");
     var pass=document.getElementById("Password");
-   
-     if (!r.test(name.value))
+    var email=document.getElementById("email");
+    var x=!r.test(name.value) + " " +s.test(name.value); 
+     if (!r.test(name.value) || s.test(name.value))
      {
         msg+="Name should be only alphabets\n";
         error=1;
      }
-     if(parseInt(dob.value.split('-')[0])<2021)
+        if(parseInt(dob.value.split('-')[0])<2020)
      {
         msg+="Enter a valid date\n";
         error=1;
@@ -57,12 +63,19 @@ function Validate()
         msg+="Enter valid number\n";
         error=1;  
     }
-    if(s.test(pass.value))
+    if(!e.test(email.value))
     {
-        msg+="Enter password with special charater\n"
-        error=1;
+        msg+="Email is not valid\n";
+        error=1;    
     }
+    if(pass.value.toString().length<8)
+    {
+        msg+="Password should be more than 8 charaters\n";
+        error=1;   
+    }
+    if(pass.value)
      
+
     alert(msg);
 }
 </script>
