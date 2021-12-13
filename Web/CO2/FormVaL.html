@@ -38,16 +38,17 @@ function Validate()
 {
     var msg="";
     var error=0;
-    var r=/^[a-zA-Z]$/;
-    var s="[!@#$%&*()_+=|<>?{}\\[\\]~-]";
-    var e="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/"
+    var r=/^[a-zA-Z]{3, }$/;
+    var s=/^[!@#$%&*()_+=|<>?{}\\[\\]~-]$/;
+    var e=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     var name =document.getElementById("name");
     var number=document.getElementById("num");
     var dob=document.getElementById("dob");
     var Username=document.getElementById("Username");
     var pass=document.getElementById("Password");
     var email=document.getElementById("email");
-     if (!r.test(name.value) && !s.test(name.value))
+    var x=!r.test(name.value) + " " +s.test(name.value); 
+     if (!r.test(name.value) || s.test(name.value))
      {
         msg+="Name should be only alphabets\n";
         error=1;
@@ -72,8 +73,7 @@ function Validate()
         msg+="Password should be more than 8 charaters\n";
         error=1;   
     }
-    if(pass.value)
-     
+
     alert(msg);
 }
 </script>

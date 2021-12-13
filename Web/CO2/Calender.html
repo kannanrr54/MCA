@@ -1,45 +1,45 @@
 <html>
+
 <head>
 </head>
 <style>
-    td{
-        border:1px solid black;
-        padding:20px;
+    td {
+        border: 1px solid black;
+        padding: 10px;
+    }
+    
+    div {
+        border: 1px solid black;
+        padding: 10px;
+        width: 50%;
+        display: inline-block;
     }
 </style>
+
 <body>
-        <input type="number" id="year">
-        <button onclick="cal()">Dislpay Calender</button>
-<script>
-    function cal()
-    { 
-        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        var x=0;
-        
-        for(var s=0;s<months.length;s++)
-        {
-            var table=document.createElement("table");
-            for(var i=0;i<6;i++)
-            {
-                var row=document.createElement("tr");
-                for(var j=0;j<8;j++)
-                {  
+    <input type="number" id="year">
+    <button onclick="cal()">Dislpay Calender</button><br>
+    <script>
+        function cal() {
+            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var x = 0;
+            var table = "<table><tr>";
+            for (var i = 0; i < 7; i++) {
+                table += "<td>";
+                for (var j = 0; j < 7; j++) {
                     x++;
-                    if(x>31)
-                    {
+                    if (x > 31) {
                         break;
                     }
-                    var col=document.createElement("td");
-                    col.innerHTML=x;
-                    row.appendChild(col);
-                    table.appendChild(row);
+                    table += (x + "</td><td>");
                 }
+                table += "</tr>"
             }
-            document.body.append(table);
+            table += "</table>";
+            document.body.innerHTML = table;
+
         }
-        
-        
-    }
-</script>
+    </script>
 </body>
+
 </html>
