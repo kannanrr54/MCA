@@ -5,7 +5,6 @@
     <center>
         <div style="border: 1px solid black;width:40%;padding:20px">
             <table>
-                <form onsubmit="Validate()">
                     <tr>
                         <td>Enter Name : </td>
                         <td><input type="text" placeholder="Name" id="name" required=""/></td>
@@ -27,18 +26,18 @@
                         <td><input type="text" placeholder="Password" required="" id="Password"></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><center><input type="submit" value="Submit" ></center></td>
+                        <td colspan="2"><center><button onclick="Validate" >Submit</button></center></td>
                     </tr>
-                </form> 
             </table>
             <div>
+            <div style="visibility: hidden;width: 20px;color :white;background-color: green;" id="p">No Errors</div>
     </center>   
 <script>
 function Validate()
 {
     var msg="";
     var error=0;
-    var r=/^[a-zA-Z]{3, }$/;
+    var r=/^[A-Za-z]+$/;
     var s=/^[!@#$%&*()_+=|<>?{}\\[\\]~-]$/;
     var e=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     var name =document.getElementById("name");
@@ -47,8 +46,7 @@ function Validate()
     var Username=document.getElementById("Username");
     var pass=document.getElementById("Password");
     var email=document.getElementById("email");
-    var x=!r.test(name.value) + " " +s.test(name.value); 
-     if (!r.test(name.value) || s.test(name.value))
+     if (!r.test(name.value))
      {
         msg+="Name should be only alphabets\n";
         error=1;
@@ -73,10 +71,14 @@ function Validate()
         msg+="Password should be more than 8 charaters\n";
         error=1;   
     }
-    if(pass.value)
-     
-
-    alert(msg);
+    if(error==1)
+    {
+        alert(msg);
+    }
+    else{
+        document.getElementById("p").style.visibility="visible";
+    }
+    
 }
 </script>
 </body>
