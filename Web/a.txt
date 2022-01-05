@@ -1,0 +1,20 @@
+if($_POST["user"]=="")
+            {
+                echo "Enter Username";
+            }
+            if($_POST["pass"]=="")
+            {
+                echo "Enter Password";
+            }
+            if($name)
+            {
+                echo "Name has numebr in it";
+            }
+            if($_POST["Age"]=="")
+            {
+                echo "Enter Age";
+            }
+            if($_POST["ph"]=="")
+            {
+                echo "Enter Phone number";
+            }
