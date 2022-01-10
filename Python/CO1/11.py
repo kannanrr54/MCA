@@ -1,4 +1,3 @@
-print("Greatest in 3 numbers")
 print("Enter in 3 nums")
 a=int(input())
 b=int(input())

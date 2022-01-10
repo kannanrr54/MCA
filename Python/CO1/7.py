@@ -1,5 +1,13 @@
-l1=[1,2,3,4,5]
-l2=[1,3,4,9]
+S1=int(input("Enter first list size"))
+S2=int(input("Enter second list size"))
+print("Enter elements of first list")
+l1=[]
+l2=[]
+for i in range(0,S1):
+    l1.append(int(input()))
+print("Enter elements of second list")
+for i in range(0,S2):
+    l2.append(int(input()))
 s1=0
 s2=0
 if(len(l1)==len(l2)):
