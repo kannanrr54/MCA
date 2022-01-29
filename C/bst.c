@@ -10,16 +10,16 @@ void inorder(struct node *r)
 	if(r!=NULL)
 	 {
 		inorder(r->left);
-		printf("%d",r->data);
+		printf("%d  ",r->data);
 		inorder(r->right);
 	 }
  }
  void min(struct node *r)
  {
     struct node *pre;
-    while(pre->data != NULL && r->left!=NULL)
+    while(pre!= NULL && r->left!=NULL)
      {
-         pre=r;
+        pre=r;
         r=r->left;
      }  
      printf("\nMin element is : %d",r->data);
@@ -27,7 +27,7 @@ void inorder(struct node *r)
  void max(struct node *r)
  {
     struct node *pre;
-    while(pre->data!=NULL && r->right!=NULL)
+    while(pre!=NULL && r->right!=NULL)
      {
         pre=r;
         r=r->right;
@@ -69,7 +69,7 @@ void inorder(struct node *r)
  void search(struct node *r,int x)
  {
      int f=0;
-     struct node *pre;
+     struct node *pre=r;
      while(pre->right!=NULL || pre->left!=NULL)
      {
          if(x==r->data)
@@ -139,7 +139,7 @@ void main()
 	inorder(root);
 	printf("\nEnter the data to search \n");
 	scanf("%d",&x);
-	//search(root,x);
+	search(root,x);
 	min(root);
 	max(root);
 	int v=0;
