@@ -1,6 +1,6 @@
 import csv
 f1=open("1.csv","w",newline="")
-f2=open("input.csv")
+f2=open("1-input.csv")
 head=["Name","MFC","DC","DS","ASE"]
 f2x=csv.reader(f2)
 f1x=csv.writer(f1)
@@ -19,7 +19,7 @@ for i in dr:
 d.close()
 print("-----------------------")
 
-print("Percentage of each student")
+print("Percentage of each Subject")
 print("Subject - Average")
 d=open("1.csv","r")
 dr=csv.DictReader(d)
