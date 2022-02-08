@@ -1,16 +1,26 @@
-class a:
-	def __init__(self,n,p):
-		self.name=n
-		self.per=p
-	def __mul__(self,other):
-		return self.per *other.days
-class b:
-	def __init__(self,n,d):
-		self.name=n
-		self.days=d
-n=input("Enter the name of the employee")
-p=int(input("Enter the salary per day of the employee"))
-d=int(input("Enter the number of days worked by the employee"))
-obj1=a(n,p)
-obj2=b(n,d)
-print(obj1*obj2)
+class Bank:
+
+    def __init__(
+        self,
+        num,
+        name,
+        typeofac,
+        bal,
+        ):
+        self.name = name
+        self.num = num
+        self.typeofac = typeofac
+        self.bal = bal
+
+    def deposit(self, amt):
+        bal = self.bal + amt
+        print ('new balance :', bal)
+
+    def withdraw(self, amt):
+        bal = self.bal - amt
+        print ('new balance :', bal)
+
+
+d = Bank(100, 'Kannan', 'Savings', 10000)
+print ('Depositing 100 rs', d.deposit(100))
+print ('Withdrawing 100 rs', d.withdraw(100))
