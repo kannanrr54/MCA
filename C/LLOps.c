@@ -5,8 +5,8 @@ struct node
 	int data;
 	struct node *next;
   };
-struct node *head,*newnode,*temp;
-void Beg()
+struct node *head,*newnode,*temp,*prev;
+void InsertBeg()
 {
     int m;
 	printf("Enter value to insert");
@@ -16,7 +16,7 @@ void Beg()
 	newnode->next=head;
 	head=newnode;
 }
-void Between()
+void InsertBetween()
 {
     int m,x;
 	printf("Enter value to insert");
@@ -38,7 +38,7 @@ void Between()
 	newnode->next=temp->next;
 	temp->next=newnode;
 }
-void End()
+void InsertEnd()
 {
     int m;
     printf("Enter value to insert");
@@ -51,6 +51,33 @@ void End()
 	 }
 	temp->next=newnode;
 	newnode->next=0;
+}
+void DeleteBeg()
+{
+	head=head->next;
+}
+void DeleteBetween()
+{	
+	int x;
+	printf("Enter the node data for position");
+	scanf("%d",&x);
+	temp=head;
+	while(temp->data!=x)
+	 {
+		temp=temp->next;	
+	 }
+	temp->next=temp->next->next;
+	
+}
+void DeleteEnd()
+{
+	temp=head;
+	while(temp->next!=0)
+	 {
+		prev=temp;
+		temp=temp->next;
+	 }
+	prev->next=NULL;
 }
 void display()
 {
@@ -85,19 +112,25 @@ void main()
 	head=0;
 	while(c==1)
 	{
-		printf("Enter any of the below option number\n1.AddNode\n2.Begining\n3.End\n4.Between\n5.Dispaly\n");
+		printf("Enter any of the below option number\n1.AddNode\n2.Insert-Begining\n3.Insert-End\n4.Insert-Between\n5.Delete-Begining\n6.Delete-End\n7.Delete-Between\n8.Dispaly\n");
 		scanf("%d",&o);
 		switch(o)
 		{
 			case 1 : addnode();
 			break;
-			case 2 : Beg();
+			case 2 : InsertBeg();
 			break;
-			case 4 : Between();
+			case 3 : InsertBetween();
 			break;
-			case 3 : End();
+			case 4 : InsertEnd();
 			break;
-			case 5 : display();
+			case 5 : DeleteEnd();
+			break;
+			case 6 : DeleteEnd();
+			break;
+			case 7 : DeleteEnd();
+			break;
+			case 8 : display();
 			break;
 		}
 		printf("Do you want to continue(0/1)\n");

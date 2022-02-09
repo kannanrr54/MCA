@@ -111,7 +111,7 @@ void main()
 	int c=1,o,i,m;
 	while(c==1)
 	{
-		printf("Enter any of the below option number\n1.AddNode\n2.Begining\n3.End\n4.Between\n5.Begining\n6.End\n7.Between\n8.Dispaly\n");
+		printf("Enter any of the below option number\n1.AddNode\n2.Insert-Begining\n3.Insert-End\n4.Insert-Between\n5.Delete-Begining\n6.Delete-End\n7.Delete-Between\n8.Dispaly\n");
 		scanf("%d",&o);
 		newnode=(struct node *)malloc(sizeof(struct node));
 		switch(o)

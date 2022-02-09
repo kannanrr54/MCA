@@ -15,6 +15,7 @@ void main() {
       scanf("%d", & a[i - 1][j - 1]);
     }
   }
+  printf("Topological Sort : - \n");
   while (x < n) {
     //finding indegree of all vertices
     int in = 0, ind[n];
