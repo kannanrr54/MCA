@@ -14,13 +14,17 @@ class Bank:
 
     def deposit(self, amt):
         bal = self.bal + amt
+        self.bal=bal
         print ('new balance :', bal)
 
     def withdraw(self, amt):
         bal = self.bal - amt
+        self.bal=bal
         print ('new balance :', bal)
 
 
 d = Bank(100, 'Kannan', 'Savings', 10000)
-print ('Depositing 100 rs', d.deposit(100))
-print ('Withdrawing 100 rs', d.withdraw(100))
+print ('Depositing 100 rs')
+d.deposit(100)
+print ('Withdrawing 100 rs')
+d.withdraw(100)

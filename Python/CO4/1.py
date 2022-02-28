@@ -1,7 +1,7 @@
 class rectnagle:
     def __init__(x,l,b):
-        x.l=l;
-        x.b=b;
+        x.l=l
+        x.b=b
     def area(x):
         return x.l*x.b
 r1=rectnagle(1,2)
