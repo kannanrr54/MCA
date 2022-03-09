@@ -13,14 +13,7 @@ void main() {
 	   scanf("%d",&a[i][j]);
 	  }
 	}
-	printf("\n Enter the starting vertex:");
-	scanf("%d",&v);
-	for (i=0;i<n;i++) 
-	{
-		q[i]=0;
-		visited[i]=0;
-	}
-	bfs(v);
+	bfs(0);
 	printf("\n The node which are reachable are:\n");
 	for (i=1;i<=n;i++)
 	{
@@ -30,7 +23,6 @@ void main() {
 	  }
 	}
 }
-
 void bfs(int v)
 {
 	for (i=0;i<n;i++)

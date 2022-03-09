@@ -2,6 +2,7 @@
 
 void main() {
   int n = 0;
+  char s[]="";
   printf("enter how many vertex are there - ");
   scanf("%d", & n);
   int a[n][n], tp[n], f[n], x = 0;

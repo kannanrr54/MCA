@@ -6,9 +6,11 @@ class student:
         x.m2=int(m2)
         x.m3=int(m3)  
     def display(x):
-       print("Id : "+x.ids)
-       print("Name : "+x.name)
-       print("Percentage : "+x.name)
+        if(int(x.ids)>2):
+            print("Id : "+x.ids)
+            print("Name : "+x.name)
+            print("Percentage : "+x.name)
+       
 print("enter the numnber of students")
 s=int(input())
 p=[]
