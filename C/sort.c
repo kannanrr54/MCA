@@ -22,8 +22,7 @@ int i=0,j=0,c[10],k=0;
 			k++;
 
 		}
-	   
-	 }
+	}
 	while(i<n)
 	{
 		c[k]=a[i];
@@ -37,7 +36,7 @@ int i=0,j=0,c[10],k=0;
 		k++;
 		j++;
 	}
-	for(int i=0;i<k;i++)
+	for (int i=0;i<k;i++)
 	{
 		printf("%d\n",c[i]);
 	}

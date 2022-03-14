@@ -1,37 +1,41 @@
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
-/*int graph[v][v] ={{0,2,3,0},
-                    {2,0,2,1},
+int graph[4][4] ={{0,2,3,0},
+                	{2,0,2,1},
                     {3,2,0,4},
-                    {0,1,4,0}}
-*/
-int i,j,a,b,u,v,n,ne=1;
-int min,cost=0,graph[9][9],parent[9];
+                    {0,1,4,0}};
+
+int i,j,a,b,u,v,n=4,ne=1;
+int min,cost=0,parent[9];
 int find(int);
 int uni(int,int);
 void main()
 {
-	printf("\nEnter the no. of vertices:");
+	/*printf("\nEnter the no. of vertices:");
 	scanf("%d",&n);
-	printf("\nEnter the cost adjacency matrix:\n");
-	for(i=1;i<=n;i++)
+	printf("\nEnter the cost adjacency matrix:\n");*/
+	for(i=0;i<n;i++)
 	{
-		for(j=1;j<=n;j++)
+		for(j=0;j<n;j++)
 		{
-		    printf("Enter the edge weight of %d to %d ",i,j);
-			scanf("%d",&graph[i][j]);
+		   /* printf("Enter the edge weight of %d to %d ",i,j);
+			scanf("%d",&graph[i][j]);*/
 			if(graph[i][j]==0)
 				graph[i][j]=999;
 		}
 	}
+		for (int i=0;i<4;i++){
+	for (int j=0;j<4;j++){
+		printf("%d\n",graph[i][j]);
+		}}
 	printf("The edges of Minimum cost Spanning Tree are\n");
 	while(ne < n)
 	{
 	    min=999;
-		for(i=1;i<=n;i++)
+		for(i=0;i<n;i++)
 		{
-			for(j=1;j<=n;j++)
+			for(j=0;j<n;j++)
 			{
 				if(graph[i][j] < min)
 				{
@@ -45,7 +49,7 @@ void main()
 		v=find(v);
 		if(uni(u,v))
 		{
-			printf("edge (%d,%d) =%d\n",a,b,min);
+			printf("edge (%d,%d) =%d\n",a+1,b+1,min);
 			cost +=min;
 			ne++;
 		}

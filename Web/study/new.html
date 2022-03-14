@@ -1,17 +1,11 @@
 <html>
-    <head>
-        <title>
-            MCA
-        </title>
-    </head>
-        <frameset cols="50%,50%">
-            <frameset rows="50%,50%">
-                <frame></frame>
-                <frame></frame>
-            </frameset>
-            <frameset rows="50%,50%">
-                <frame name="a"/>
-                <frame name="a"/>   
-            </frameset>
-        </frameset>
+    <body>
+<button onclick="s()">click</button>
+    </body>
+    <script>
+        function s(){
+            d="<tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr>";
+            document.body.innerHTML=d;
+        }
+    </script>
 </html>

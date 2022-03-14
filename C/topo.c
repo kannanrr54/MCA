@@ -37,6 +37,8 @@ void main() {
         break;
       }
     }
+    printf("T- %d",t);
+    
     printf("\n");
     //updating matrix with new values
     for (int i = 0; i < n; i++) {
