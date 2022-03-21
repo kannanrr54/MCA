@@ -4,13 +4,14 @@ class mat{
 	//b=new int[10][10];
 	//int c[][],a[][],b[][];
 	Scanner s=new Scanner(System.in);
-	void get(){
+	int[] get(){
 		System.out.println("Enter a 4x4 matrix");
 		for(int i=0;i<4;i++){
 			for(int j=0;j<4;j++){
 				a[i][j]=s.nextInt();
 			}
 		}
+		return a;
 	}
 	void display(){
 		System.out.println("Enter a 4x4 matrix");
