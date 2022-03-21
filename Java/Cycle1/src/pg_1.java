@@ -23,14 +23,14 @@ public class pg_1 {
 			o[i]=obj;
 			i++;
 		}
-		if(o[0].price>o[1].price && o[0].price>o[2].price){
-			System.out.println("Product "+o[0].pname+" has Highest price  : "+o[0].price);
+		if(o[0].price<o[1].price && o[0].price<o[2].price){
+			System.out.println("Product "+o[0].pname+" has lowest price  : "+o[0].price);
 		}
-		else if(o[1].price>o[0].price && o[1].price>o[2].price){
-			System.out.println("Product "+o[1].pname+" has Highest price  : "+o[1].price);
+		else if(o[1].price<o[0].price && o[1].price<o[2].price){
+			System.out.println("Product "+o[1].pname+" has lowest price  : "+o[1].price);
 		}
 		else{
-			System.out.println("Product "+o[2].pname+" has Highest price  : "+o[2].price);
+			System.out.println("Product "+o[2].pname+" has lowest price  : "+o[2].price);
 		}
 	}
 }
