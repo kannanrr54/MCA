@@ -2,6 +2,6 @@ use movie;
 select * from movies where myear>1997;
 select * from movies where myear>1997 and director='Hanson';
 select title,rating from movies;
-select actor 'nanan' from actors union select director from movies;
+select distinct m.director,a.actor from movies m join acts a on a.title=m.title;
 select * from acts a join movies m on a.title=m.title where m.director='Coen' and a.actor='McDormand';
 
