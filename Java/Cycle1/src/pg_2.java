@@ -1,10 +1,8 @@
 import java.util.*;
 class mat{
 	int a[][]=new int[10][10];
-	//b=new int[10][10];
-	//int c[][],a[][],b[][];
 	Scanner s=new Scanner(System.in);
-	int[] get(){
+	int[][] get(){
 		System.out.println("Enter a 4x4 matrix");
 		for(int i=0;i<4;i++){
 			for(int j=0;j<4;j++){
@@ -13,24 +11,34 @@ class mat{
 		}
 		return a;
 	}
-	void display(){
-		System.out.println("Enter a 4x4 matrix");
+	void display(int a[][]){
 		for(int i=0;i<4;i++){
 			for(int j=0;j<4;j++){
-				//a[i][j]=s.nextInt();
 				System.out.print(a[i][j]);
 			}
 			System.out.println("");
 		}
+	}
+	int[][] add(int a[][],int b[][]){
+		int c[][]=new int[10][10];
+		for(int i=0;i<4;i++){
+			for(int j=0;j<4;j++){
+				c[i][j]=a[i][j]+b[i][j];
+			}
+		}
+		return c;
 	}
 
 }
 public class pg_2 {
 	public static void main(String [] args){
 		mat m1 =new mat();
-		m1.get();
+		int a[][] = m1.get();
 		mat m2 =new mat();
-		m2.get();
-		m.display();
+		int b[][] = m2.get();
+		System.out.println("Sum is");
+		int c[][]=m1.add(a, b);
+		m1.display(c);
+		
 	}
 }
