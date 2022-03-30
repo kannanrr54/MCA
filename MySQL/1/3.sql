@@ -19,7 +19,7 @@ select avg(salary) from employee;
 select count(empno) from employee;
 select count(distinct emp_name) from employee;
 select emp_name,count(empno) from employee group by emp_name;
-select emp_name,sum(salary),count(emp_name) from employee group by emp_name;
+select emp_name,sum(salary),count(emp_name) from employee group by emp_name having count(emp_name)>1;
 select emp_name,sum(salary) 'salary' from employee where salary > 120000 group by emp_name;
 select distinct emp_name from employee order by emp_name desc;
 select * from employee where emp_name="amit" and salary>50000;
