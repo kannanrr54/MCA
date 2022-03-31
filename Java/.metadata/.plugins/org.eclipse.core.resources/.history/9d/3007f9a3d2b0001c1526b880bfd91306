@@ -1,0 +1,42 @@
+package CO1;
+
+import java.util.Scanner;
+
+class mat{
+	int a[][]=new int[10][10];
+	int r,c;
+	Scanner s=new Scanner(System.in);
+	int[][] get(){
+		System.out.println("Enter number of columns");
+		r=s.nextInt();
+		System.out.println("Enter number of rows");
+		c=s.nextInt();
+		for(int i=0;i<r;i++){
+			for(int j=0;j<c;j++){
+				a[i][j]=s.nextInt();
+			}
+		}
+		return a;
+	}
+	void display(int a[][]){
+		for(int i=0;i<r;i++){
+			for(int j=0;j<c;j++){
+				System.out.print(a[i][j]);
+			}
+			System.out.println("");
+		}
+	}
+	int[][] add(int a[][],int b[][]){
+		int c[][]=new int[10][10];
+		for(int i=0;i<r;i++){
+			for(int j=0;j<c;j++){
+				c[i][j]=a[i][j]+b[i][j];
+			}
+		}
+		return c;
+	}
+
+}
+public class pg_4 {
+
+}
