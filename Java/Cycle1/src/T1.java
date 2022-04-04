@@ -1,5 +1,5 @@
 import java.util.*;
-class product {
+class T1 {
     public static void main(String[] args) {
         System.out.println("Enter product details\nEnter product name");
         Scanner s=new Scanner(System.in);
