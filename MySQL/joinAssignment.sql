@@ -1,5 +1,6 @@
-create database JA;
-use JA;
+
+create database movie;
+use movie;
 CREATE TABLE actors (
   act_id int,
   act_name varchar(20) NOT NULL,
@@ -29,7 +30,7 @@ insert into directors value
 (13,"Hitchcock","9898989898"),
 (14,"Ethan","9898989898");
 insert into movies value 
-(20,"ready one player","2020","English",10),
+(25,"ready one player","2020","English",10),
 (20,"Jaws","1975","English",10),
 (21,"Jurassic Park","1993","English",10),
 (22,"Lifeboat ","1944","English",13),
@@ -42,17 +43,36 @@ insert into movie_cast values
 (24,1,"Robin"),
 (23,2,"Dead man");
 insert into rating values(20,3),(21,4),(22,5),(23,2),(24,3);
+insert into rating values(20,0),(21,5),(22,2),(23,3),(24,4);
 /*1*/
 select m.mov_title
 from movies m join directors d 
 	on m.dir_id=d.dir_id
 where d.dir_name="Hitchcock";
 
+/*3*/
 select distinct a.act_name 
 from actors a join  movie_cast mc 
 	on a.act_id=mc.act_id 
 join movies m 
 	on m.mov_id=mc.mov_id
-where CAST(m.mov_year AS Decimal) < 2000 or CAST(m.mov_year AS Decimal) > 2015
+where CAST(m.mov_year AS Decimal) < 2000 or CAST(m.mov_year AS Decimal) > 2015;
+
+/*4*/
+select m.mov_title,r.rev_star,max(r.rev_star) 'Top Stars' 
+from rating r join movies m 
+	on r.mov_id=m.mov_id 
+where r.rev_star>0 
+group by m.mov_title 
+order by m.mov_title ;
+
+/*5*/
+update rating 
+set rev_star=5
+where mov_id in (select m.mov_id
+				 from movies m join directors d 
+					on m.dir_id=d.dir_id
+				 where d.dir_name="steven spielberg");
+			
   
   
