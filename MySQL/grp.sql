@@ -37,7 +37,9 @@ INSERT INTO faculty VALUES('Rachel',105,120000,4);
 SELECT d.name,count(f.id) 'faculty'
 FROM faculty f JOIN dept d 
 ON f.dept_id=d.id
+where f.salary>25000
 GROUP BY d.id;
+
 
 SELECT d.name, count(s.id) 'student'
 FROM student s JOIN dept d 
