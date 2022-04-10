@@ -42,6 +42,8 @@ insert into movie_cast values
 (24,3,"Batman"),
 (24,1,"Robin"),
 (23,2,"Dead man");
+insert into movie_cast values
+(23,4,"Dead man");
 insert into rating values(20,3),(21,4),(22,5),(23,2),(24,3);
 insert into rating values(20,0),(21,5),(22,2),(23,3),(24,4);
 /*1*/
@@ -49,6 +51,20 @@ select m.mov_title
 from movies m join directors d 
 	on m.dir_id=d.dir_id
 where d.dir_name="Hitchcock";
+
+/*2*/	
+SELECT M.mov_title
+FROM movies M JOIN movie_cast MC 
+	ON M.mov_id=MC.mov_id
+WHERE MC.mov_id in (
+		SELECT M.mov_id 
+		FROM movies M JOIN movie_cast MC 
+		ON M.mov_id=MC.mov_id
+		GROUP BY M.mov_id 
+		HAVING COUNT(MC.act_id)>1)
+	GROUP BY MC.act_id 
+	HAVING COUNT(MC.mov_id)>1;
+
 
 /*3*/
 select distinct a.act_name 
@@ -59,7 +75,7 @@ join movies m
 where CAST(m.mov_year AS Decimal) < 2000 or CAST(m.mov_year AS Decimal) > 2015;
 
 /*4*/
-select m.mov_title,r.rev_star,max(r.rev_star) 'Top Stars' 
+select m.mov_title,max(r.rev_star) 'Top Stars' 
 from rating r join movies m 
 	on r.mov_id=m.mov_id 
 where r.rev_star>0 
