@@ -1,0 +1,299 @@
+Microsoft Windows [Version 10.0.15063]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+C:\Program Files\MongoDB\Server\5.0\bin>mongo
+MongoDB shell version v5.0.8
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("3cd8d913-ef31-422e-a71e-76adc16852ab") }
+MongoDB server version: 5.0.8
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-04-27T02:52:30.775-07:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> use student
+switched to db student
+> db.createCollection("Student")
+{ "ok" : 1 }
+> show databases
+admin    0.000GB
+config   0.000GB
+local    0.000GB
+newdb    0.000GB
+student  0.000GB
+trial    0.000GB
+> db.student.insert({"srn":1,"sname":"Rahul","degree":"BCA","sem":3,"CGPA":7.8})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({"srn":2,"sname":"Manu","degree":"BBA","sem":2,"CGPA":4.8})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({"srn":3,"sname":"Jeslin","degree":"Bsc","sem":6,"CGPA":9.0})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({"srn":5,"sname":"Joyal","degree":"Bsc","sem":6,"CGPA":9.9})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({"srn":6,"sname":"soni","degree":"BBA","sem":4,"CGPA":7.9})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({"srn":7,"sname":"Kannan","degree":"Bsc","sem":5,"CGPA":7.3})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({"srn":9,"sname":"Don","degree":"Bsc","sem":1,"CGPA":7.3})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({"srn":10,"sname":"Binoy","degree":"Bcom","sem":1,"CGPA":7.6})
+WriteResult({ "nInserted" : 1 })
+> db.student.find()
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "srn" : 1, "sname" : "Rahul", "degree" : "BCA", "sem" : 3, "CGPA" : 7.8 }
+{ "_id" : ObjectId("62781533397f5676b18ace18"), "srn" : 2, "sname" : "Manu", "degree" : "BBA", "sem" : 2, "CGPA" : 4.8 }
+{ "_id" : ObjectId("6278156a397f5676b18ace19"), "srn" : 3, "sname" : "Jeslin", "degree" : "Bsc", "sem" : 6, "CGPA" : 9 }
+{ "_id" : ObjectId("62781587397f5676b18ace1a"), "srn" : 5, "sname" : "Joyal", "degree" : "Bsc", "sem" : 6, "CGPA" : 9.9 }
+{ "_id" : ObjectId("62781619397f5676b18ace1b"), "srn" : 6, "sname" : "soni", "degree" : "BBA", "sem" : 4, "CGPA" : 7.9 }
+{ "_id" : ObjectId("62781638397f5676b18ace1c"), "srn" : 7, "sname" : "Kannan", "degree" : "Bsc", "sem" : 5, "CGPA" : 7.3 }
+{ "_id" : ObjectId("627816af397f5676b18ace1d"), "srn" : 9, "sname" : "Don", "degree" : "Bsc", "sem" : 1, "CGPA" : 7.3 }
+{ "_id" : ObjectId("627816c6397f5676b18ace1e"), "srn" : 10, "sname" : "Binoy", "degree" : "Bcom", "sem" : 1, "CGPA" : 7.6 }
+> db.student.find().pretty()
+{
+        "_id" : ObjectId("6278146c397f5676b18ace17"),
+        "srn" : 1,
+        "sname" : "Rahul",
+        "degree" : "BCA",
+        "sem" : 3,
+        "CGPA" : 7.8
+}
+{
+        "_id" : ObjectId("62781533397f5676b18ace18"),
+        "srn" : 2,
+        "sname" : "Manu",
+        "degree" : "BBA",
+        "sem" : 2,
+        "CGPA" : 4.8
+}
+{
+        "_id" : ObjectId("6278156a397f5676b18ace19"),
+        "srn" : 3,
+        "sname" : "Jeslin",
+        "degree" : "Bsc",
+        "sem" : 6,
+        "CGPA" : 9
+}
+{
+        "_id" : ObjectId("62781587397f5676b18ace1a"),
+        "srn" : 5,
+        "sname" : "Joyal",
+        "degree" : "Bsc",
+        "sem" : 6,
+        "CGPA" : 9.9
+}
+{
+        "_id" : ObjectId("62781619397f5676b18ace1b"),
+        "srn" : 6,
+        "sname" : "soni",
+        "degree" : "BBA",
+        "sem" : 4,
+        "CGPA" : 7.9
+}
+{
+        "_id" : ObjectId("62781638397f5676b18ace1c"),
+        "srn" : 7,
+        "sname" : "Kannan",
+        "degree" : "Bsc",
+        "sem" : 5,
+        "CGPA" : 7.3
+}
+{
+        "_id" : ObjectId("627816af397f5676b18ace1d"),
+        "srn" : 9,
+        "sname" : "Don",
+        "degree" : "Bsc",
+        "sem" : 1,
+        "CGPA" : 7.3
+}
+{
+        "_id" : ObjectId("627816c6397f5676b18ace1e"),
+        "srn" : 10,
+        "sname" : "Binoy",
+        "degree" : "Bcom",
+        "sem" : 1,
+        "CGPA" : 7.6
+}
+> db.student.find({"Degree":"BCA"})
+> db.student.find({"degree":"BCA"})
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "srn" : 1, "sname" : "Rahul", "degree" : "BCA", "sem" : 3, "CGPA" : 7.8 }
+> db.student.find.sort({"sname":"1"})
+uncaught exception: TypeError: db.student.find.sort is not a function :
+@(shell):1:1
+> db.student.find.sort({"sname":1})
+uncaught exception: TypeError: db.student.find.sort is not a function :
+@(shell):1:1
+> db.student.find().sort({"sname":1})
+{ "_id" : ObjectId("627816c6397f5676b18ace1e"), "srn" : 10, "sname" : "Binoy", "degree" : "Bcom", "sem" : 1, "CGPA" : 7.6 }
+{ "_id" : ObjectId("627816af397f5676b18ace1d"), "srn" : 9, "sname" : "Don", "degree" : "Bsc", "sem" : 1, "CGPA" : 7.3 }
+{ "_id" : ObjectId("6278156a397f5676b18ace19"), "srn" : 3, "sname" : "Jeslin", "degree" : "Bsc", "sem" : 6, "CGPA" : 9 }
+{ "_id" : ObjectId("62781587397f5676b18ace1a"), "srn" : 5, "sname" : "Joyal", "degree" : "Bsc", "sem" : 6, "CGPA" : 9.9 }
+{ "_id" : ObjectId("62781638397f5676b18ace1c"), "srn" : 7, "sname" : "Kannan", "degree" : "Bsc", "sem" : 5, "CGPA" : 7.3 }
+{ "_id" : ObjectId("62781533397f5676b18ace18"), "srn" : 2, "sname" : "Manu", "degree" : "BBA", "sem" : 2, "CGPA" : 4.8 }
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "srn" : 1, "sname" : "Rahul", "degree" : "BCA", "sem" : 3, "CGPA" : 7.8 }
+{ "_id" : ObjectId("62781619397f5676b18ace1b"), "srn" : 6, "sname" : "soni", "degree" : "BBA", "sem" : 4, "CGPA" : 7.9 }
+> db.student.find().sort({"_id":1})
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "srn" : 1, "sname" : "Rahul", "degree" : "BCA", "sem" : 3, "CGPA" : 7.8 }
+{ "_id" : ObjectId("62781533397f5676b18ace18"), "srn" : 2, "sname" : "Manu", "degree" : "BBA", "sem" : 2, "CGPA" : 4.8 }
+{ "_id" : ObjectId("6278156a397f5676b18ace19"), "srn" : 3, "sname" : "Jeslin", "degree" : "Bsc", "sem" : 6, "CGPA" : 9 }
+{ "_id" : ObjectId("62781587397f5676b18ace1a"), "srn" : 5, "sname" : "Joyal", "degree" : "Bsc", "sem" : 6, "CGPA" : 9.9 }
+{ "_id" : ObjectId("62781619397f5676b18ace1b"), "srn" : 6, "sname" : "soni", "degree" : "BBA", "sem" : 4, "CGPA" : 7.9 }
+{ "_id" : ObjectId("62781638397f5676b18ace1c"), "srn" : 7, "sname" : "Kannan", "degree" : "Bsc", "sem" : 5, "CGPA" : 7.3 }
+{ "_id" : ObjectId("627816af397f5676b18ace1d"), "srn" : 9, "sname" : "Don", "degree" : "Bsc", "sem" : 1, "CGPA" : 7.3 }
+{ "_id" : ObjectId("627816c6397f5676b18ace1e"), "srn" : 10, "sname" : "Binoy", "degree" : "Bcom", "sem" : 1, "CGPA" : 7.6 }
+> db.student.find().sort({_id:1})
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "srn" : 1, "sname" : "Rahul", "degree" : "BCA", "sem" : 3, "CGPA" : 7.8 }
+{ "_id" : ObjectId("62781533397f5676b18ace18"), "srn" : 2, "sname" : "Manu", "degree" : "BBA", "sem" : 2, "CGPA" : 4.8 }
+{ "_id" : ObjectId("6278156a397f5676b18ace19"), "srn" : 3, "sname" : "Jeslin", "degree" : "Bsc", "sem" : 6, "CGPA" : 9 }
+{ "_id" : ObjectId("62781587397f5676b18ace1a"), "srn" : 5, "sname" : "Joyal", "degree" : "Bsc", "sem" : 6, "CGPA" : 9.9 }
+{ "_id" : ObjectId("62781619397f5676b18ace1b"), "srn" : 6, "sname" : "soni", "degree" : "BBA", "sem" : 4, "CGPA" : 7.9 }
+{ "_id" : ObjectId("62781638397f5676b18ace1c"), "srn" : 7, "sname" : "Kannan", "degree" : "Bsc", "sem" : 5, "CGPA" : 7.3 }
+{ "_id" : ObjectId("627816af397f5676b18ace1d"), "srn" : 9, "sname" : "Don", "degree" : "Bsc", "sem" : 1, "CGPA" : 7.3 }
+{ "_id" : ObjectId("627816c6397f5676b18ace1e"), "srn" : 10, "sname" : "Binoy", "degree" : "Bcom", "sem" : 1, "CGPA" : 7.6 }
+> db.student.find().sort({"srn":1})
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "srn" : 1, "sname" : "Rahul", "degree" : "BCA", "sem" : 3, "CGPA" : 7.8 }
+{ "_id" : ObjectId("62781533397f5676b18ace18"), "srn" : 2, "sname" : "Manu", "degree" : "BBA", "sem" : 2, "CGPA" : 4.8 }
+{ "_id" : ObjectId("6278156a397f5676b18ace19"), "srn" : 3, "sname" : "Jeslin", "degree" : "Bsc", "sem" : 6, "CGPA" : 9 }
+{ "_id" : ObjectId("62781587397f5676b18ace1a"), "srn" : 5, "sname" : "Joyal", "degree" : "Bsc", "sem" : 6, "CGPA" : 9.9 }
+{ "_id" : ObjectId("62781619397f5676b18ace1b"), "srn" : 6, "sname" : "soni", "degree" : "BBA", "sem" : 4, "CGPA" : 7.9 }
+{ "_id" : ObjectId("62781638397f5676b18ace1c"), "srn" : 7, "sname" : "Kannan", "degree" : "Bsc", "sem" : 5, "CGPA" : 7.3 }
+{ "_id" : ObjectId("627816af397f5676b18ace1d"), "srn" : 9, "sname" : "Don", "degree" : "Bsc", "sem" : 1, "CGPA" : 7.3 }
+{ "_id" : ObjectId("627816c6397f5676b18ace1e"), "srn" : 10, "sname" : "Binoy", "degree" : "Bcom", "sem" : 1, "CGPA" : 7.6 }
+> db.student.find({_id:1})
+> db.student.find({"_id":1})
+> db.student.find({"srn":1})
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "srn" : 1, "sname" : "Rahul", "degree" : "BCA", "sem" : 3, "CGPA" : 7.8 }
+> db.student.find().limit(5)
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "srn" : 1, "sname" : "Rahul", "degree" : "BCA", "sem" : 3, "CGPA" : 7.8 }
+{ "_id" : ObjectId("62781533397f5676b18ace18"), "srn" : 2, "sname" : "Manu", "degree" : "BBA", "sem" : 2, "CGPA" : 4.8 }
+{ "_id" : ObjectId("6278156a397f5676b18ace19"), "srn" : 3, "sname" : "Jeslin", "degree" : "Bsc", "sem" : 6, "CGPA" : 9 }
+{ "_id" : ObjectId("62781587397f5676b18ace1a"), "srn" : 5, "sname" : "Joyal", "degree" : "Bsc", "sem" : 6, "CGPA" : 9.9 }
+{ "_id" : ObjectId("62781619397f5676b18ace1b"), "srn" : 6, "sname" : "soni", "degree" : "BBA", "sem" : 4, "CGPA" : 7.9 }
+> db.student.find().skip(4).limit(3)
+{ "_id" : ObjectId("62781619397f5676b18ace1b"), "srn" : 6, "sname" : "soni", "degree" : "BBA", "sem" : 4, "CGPA" : 7.9 }
+{ "_id" : ObjectId("62781638397f5676b18ace1c"), "srn" : 7, "sname" : "Kannan", "degree" : "Bsc", "sem" : 5, "CGPA" : 7.3 }
+{ "_id" : ObjectId("627816af397f5676b18ace1d"), "srn" : 9, "sname" : "Don", "degree" : "Bsc", "sem" : 1, "CGPA" : 7.3 }
+> db.student.find("sname":"Rahul")
+uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):1:23
+> db.student.find({"sname":"Rahul"})
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "srn" : 1, "sname" : "Rahul", "degree" : "BCA", "sem" : 3, "CGPA" : 7.8 }
+> db.student.find({},{"sname":"Rahul"})
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "sname" : "Rahul" }
+{ "_id" : ObjectId("62781533397f5676b18ace18"), "sname" : "Rahul" }
+{ "_id" : ObjectId("6278156a397f5676b18ace19"), "sname" : "Rahul" }
+{ "_id" : ObjectId("62781587397f5676b18ace1a"), "sname" : "Rahul" }
+{ "_id" : ObjectId("62781619397f5676b18ace1b"), "sname" : "Rahul" }
+{ "_id" : ObjectId("62781638397f5676b18ace1c"), "sname" : "Rahul" }
+{ "_id" : ObjectId("627816af397f5676b18ace1d"), "sname" : "Rahul" }
+{ "_id" : ObjectId("627816c6397f5676b18ace1e"), "sname" : "Rahul" }
+> db.student.find({},{"sname":"Rahul"},{"degree":1})
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "sname" : "Rahul" }
+{ "_id" : ObjectId("62781533397f5676b18ace18"), "sname" : "Rahul" }
+{ "_id" : ObjectId("6278156a397f5676b18ace19"), "sname" : "Rahul" }
+{ "_id" : ObjectId("62781587397f5676b18ace1a"), "sname" : "Rahul" }
+{ "_id" : ObjectId("62781619397f5676b18ace1b"), "sname" : "Rahul" }
+{ "_id" : ObjectId("62781638397f5676b18ace1c"), "sname" : "Rahul" }
+{ "_id" : ObjectId("627816af397f5676b18ace1d"), "sname" : "Rahul" }
+{ "_id" : ObjectId("627816c6397f5676b18ace1e"), "sname" : "Rahul" }
+> db.student.find({},{"degree":1})
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "degree" : "BCA" }
+{ "_id" : ObjectId("62781533397f5676b18ace18"), "degree" : "BBA" }
+{ "_id" : ObjectId("6278156a397f5676b18ace19"), "degree" : "Bsc" }
+{ "_id" : ObjectId("62781587397f5676b18ace1a"), "degree" : "Bsc" }
+{ "_id" : ObjectId("62781619397f5676b18ace1b"), "degree" : "BBA" }
+{ "_id" : ObjectId("62781638397f5676b18ace1c"), "degree" : "Bsc" }
+{ "_id" : ObjectId("627816af397f5676b18ace1d"), "degree" : "Bsc" }
+{ "_id" : ObjectId("627816c6397f5676b18ace1e"), "degree" : "Bcom" }
+> db.student.find({},{"degree":1},{"sname":"Rahul"})
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "degree" : "BCA" }
+{ "_id" : ObjectId("62781533397f5676b18ace18"), "degree" : "BBA" }
+{ "_id" : ObjectId("6278156a397f5676b18ace19"), "degree" : "Bsc" }
+{ "_id" : ObjectId("62781587397f5676b18ace1a"), "degree" : "Bsc" }
+{ "_id" : ObjectId("62781619397f5676b18ace1b"), "degree" : "BBA" }
+{ "_id" : ObjectId("62781638397f5676b18ace1c"), "degree" : "Bsc" }
+{ "_id" : ObjectId("627816af397f5676b18ace1d"), "degree" : "Bsc" }
+{ "_id" : ObjectId("627816c6397f5676b18ace1e"), "degree" : "Bcom" }
+> db.student.find({},{"degree":1,_id:0},{"sname":"Rahul"})
+{ "degree" : "BCA" }
+{ "degree" : "BBA" }
+{ "degree" : "Bsc" }
+{ "degree" : "Bsc" }
+{ "degree" : "BBA" }
+{ "degree" : "Bsc" }
+{ "degree" : "Bsc" }
+{ "degree" : "Bcom" }
+> db.student.find({"degree":1,_id:0},{"sname":"Rahul"})
+> db.student.find({"degree":1,_id:0})
+> db.student.find({"degree":1})
+> db.student.find({},{"degree":1,_id:0},{"sname":"Rahul"})
+{ "degree" : "BCA" }
+{ "degree" : "BBA" }
+{ "degree" : "Bsc" }
+{ "degree" : "Bsc" }
+{ "degree" : "BBA" }
+{ "degree" : "Bsc" }
+{ "degree" : "Bsc" }
+{ "degree" : "Bcom" }
+> db.student.find({"sname":"Rahul"},{"degree":1,_id:0})
+{ "degree" : "BCA" }
+> db.student.find({"sname":"Rahul"},{"sname":1,"degree":1})
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "sname" : "Rahul", "degree" : "BCA" }
+> db.student.find().skip(4).limit(3).sort("CGPA":1)
+uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):1:46
+> db.student.find().skip(4).limit(3).sort({"CGPA":1})
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "srn" : 1, "sname" : "Rahul", "degree" : "BCA", "sem" : 3, "CGPA" : 7.8 }
+{ "_id" : ObjectId("62781619397f5676b18ace1b"), "srn" : 6, "sname" : "soni", "degree" : "BBA", "sem" : 4, "CGPA" : 7.9 }
+{ "_id" : ObjectId("6278156a397f5676b18ace19"), "srn" : 3, "sname" : "Jeslin", "degree" : "Bsc", "sem" : 6, "CGPA" : 9 }
+> db.student.find({"degree":"BCA"}).count(*)
+uncaught exception: SyntaxError: expected expression, got '*' :
+@(shell):1:40
+> db.student.find({"degree":"BCA"}).count()
+1
+> db.student.find({"degree":1,_id:0})
+> db.student.find({},{"degree":1,_id:0})
+{ "degree" : "BCA" }
+{ "degree" : "BBA" }
+{ "degree" : "Bsc" }
+{ "degree" : "Bsc" }
+{ "degree" : "BBA" }
+{ "degree" : "Bsc" }
+{ "degree" : "Bsc" }
+{ "degree" : "Bcom" }
+> db.student.distinct({"degree"})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:29
+> db.student.distinct("degree")
+[ "BBA", "BCA", "Bcom", "Bsc" ]
+> db.student.find({"degree":"BCA"})
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "srn" : 1, "sname" : "Rahul", "degree" : "BCA", "sem" : 3, "CGPA" : 7.8 }
+> db.student.find({$and[{"degree":"BCA"},{"CGPA":{$gt:6}},{"CGPA":{$lt:7.5}}]})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:21
+> db.student.find({$and:[{"degree":"BCA"},{"CGPA":{$gt:6}},{"CGPA":{$lt:7.5}}]})
+> db.student.find({$and:[{"degree":"BCA"},{"CGPA":{$gt:6}},{"CGPA":{$lt:6}}]})
+> db.student.find({$and:[{"degree":"BCA"},{"CGPA":{$gt:6}},{"CGPA":{$lt:8}}]})
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "srn" : 1, "sname" : "Rahul", "degree" : "BCA", "sem" : 3, "CGPA" : 7.8 }
+> db.student.find({$and:[{"degree":"BCA"},{"sem":6}]})
+> db.student.find({$and:[{"degree":"BCA"},{"sem":6}]})
+> db.student.insert({"srn":2,"sname":"Manu","degree":"BCA","sem":6,"CGPA":4.8})
+WriteResult({ "nInserted" : 1 })
+> db.student.find({$and:[{"degree":"BCA"},{"sem":6}]})
+{ "_id" : ObjectId("627826b2397f5676b18ace1f"), "srn" : 2, "sname" : "Manu", "degree" : "BCA", "sem" : 6, "CGPA" : 4.8 }
+>
