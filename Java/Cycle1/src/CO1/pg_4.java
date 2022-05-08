@@ -18,12 +18,12 @@ class sym{
 		
 		return a;
 	}
-	void display(int a[][]){
+	/*void display(int a[][]){
 		for(int i=0;i<r;i++){
 			for(int j=0;j<c;j++){
 				System.out.print(" "+a[i][j]);}
 			System.out.println("");}
-	}
+	}*/
 	void CheckSym(int a[][]){
 		int d=0;
 		for(int i=0;i<r;i++)
@@ -42,7 +42,7 @@ public class pg_4 {
 		int a[][]=new int[10][10];
 		sym s1=new sym();
 		a=s1.get();
-		s1.display(a);
+		//s1.display(a);
 		s1.CheckSym(a);
 	}
 	
