@@ -1,0 +1,85 @@
+Microsoft Windows [Version 10.0.15063]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+C:\Program Files\MongoDB\Server\5.0\bin>mongo
+MongoDB shell version v5.0.8
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("c11ffcc4-c37e-4b78-8da2-46d48d093b62") }
+MongoDB server version: 5.0.8
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2097-01-01T00:02:38.110+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> db.student.find().skip(4).limit(3).sort({"CGPA":1})
+> use student
+switched to db student
+> db.student.find().skip(4).limit(3).sort({"CGPA":1})
+{ "_id" : ObjectId("627816c6397f5676b18ace1e"), "srn" : 10, "sname" : "Binoy", "degree" : "Bcom", "sem" : 1, "CGPA" : 7.6 }
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "srn" : 1, "sname" : "Rahul", "degree" : "BCA", "sem" : 3, "CGPA" : 7.8 }
+{ "_id" : ObjectId("62781619397f5676b18ace1b"), "srn" : 6, "sname" : "soni", "degree" : "BBA", "sem" : 4, "CGPA" : 7.9 }
+> (db.student.find().skip(4).limit(3)).sort({"CGPA":1})
+{ "_id" : ObjectId("627816c6397f5676b18ace1e"), "srn" : 10, "sname" : "Binoy", "degree" : "Bcom", "sem" : 1, "CGPA" : 7.6 }
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "srn" : 1, "sname" : "Rahul", "degree" : "BCA", "sem" : 3, "CGPA" : 7.8 }
+{ "_id" : ObjectId("62781619397f5676b18ace1b"), "srn" : 6, "sname" : "soni", "degree" : "BBA", "sem" : 4, "CGPA" : 7.9 }
+> (db.student.find().skip(4).limit(3)).sort({"CGPA":
+... db.student.find().skip(4).limit(3).sort({"CGPA":1})
+...
+...
+>
+> db.student.find().sort({"CGPA":1}).skip(4).limit(3)
+{ "_id" : ObjectId("627816c6397f5676b18ace1e"), "srn" : 10, "sname" : "Binoy", "degree" : "Bcom", "sem" : 1, "CGPA" : 7.6 }
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "srn" : 1, "sname" : "Rahul", "degree" : "BCA", "sem" : 3, "CGPA" : 7.8 }
+{ "_id" : ObjectId("62781619397f5676b18ace1b"), "srn" : 6, "sname" : "soni", "degree" : "BBA", "sem" : 4, "CGPA" : 7.9 }
+> cb.student.find({sname:{$regex:"^k"}})
+uncaught exception: ReferenceError: cb is not defined :
+@(shell):1:1
+> db.student.find({sname:{$regex:"^k"}})
+> db.student.find({sname:{$regex:"^K"}})
+{ "_id" : ObjectId("62781638397f5676b18ace1c"), "srn" : 7, "sname" : "Kannan", "degree" : "Bsc", "sem" : 5, "CGPA" : 7.3 }
+> db.student.find({sname:{$regex:"an"}})
+{ "_id" : ObjectId("62781533397f5676b18ace18"), "srn" : 2, "sname" : "Manu", "degree" : "BBA", "sem" : 2, "CGPA" : 4.8 }
+{ "_id" : ObjectId("62781638397f5676b18ace1c"), "srn" : 7, "sname" : "Kannan", "degree" : "Bsc", "sem" : 5, "CGPA" : 7.3 }
+{ "_id" : ObjectId("627826b2397f5676b18ace1f"), "srn" : 2, "sname" : "Manu", "degree" : "BCA", "sem" : 6, "CGPA" : 4.8 }
+> db.student.find({sname:/an/})
+{ "_id" : ObjectId("62781533397f5676b18ace18"), "srn" : 2, "sname" : "Manu", "degree" : "BBA", "sem" : 2, "CGPA" : 4.8 }
+{ "_id" : ObjectId("62781638397f5676b18ace1c"), "srn" : 7, "sname" : "Kannan", "degree" : "Bsc", "sem" : 5, "CGPA" : 7.3 }
+{ "_id" : ObjectId("627826b2397f5676b18ace1f"), "srn" : 2, "sname" : "Manu", "degree" : "BCA", "sem" : 6, "CGPA" : 4.8 }
+> db.student.find({sname:/an})
+uncaught exception: SyntaxError: unterminated regular expression literal :
+@(shell):1:23
+> db.student.find({sname:{$regex:"an$"}})
+{ "_id" : ObjectId("62781638397f5676b18ace1c"), "srn" : 7, "sname" : "Kannan", "degree" : "Bsc", "sem" : 5, "CGPA" : 7.3 }
+> db.student.update({"sname":"Kannan"},{$set{"sname":"xxxxxxxx"}})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:42
+> db.student.update({"sname":"Kannan"},{$set:{"sname":"xxxxxxxx"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.student.find()
+{ "_id" : ObjectId("6278146c397f5676b18ace17"), "srn" : 1, "sname" : "Rahul", "degree" : "BCA", "sem" : 3, "CGPA" : 7.8 }
+{ "_id" : ObjectId("62781533397f5676b18ace18"), "srn" : 2, "sname" : "Manu", "degree" : "BBA", "sem" : 2, "CGPA" : 4.8 }
+{ "_id" : ObjectId("6278156a397f5676b18ace19"), "srn" : 3, "sname" : "Jeslin", "degree" : "Bsc", "sem" : 6, "CGPA" : 9 }
+{ "_id" : ObjectId("62781587397f5676b18ace1a"), "srn" : 5, "sname" : "Joyal", "degree" : "Bsc", "sem" : 6, "CGPA" : 9.9 }
+{ "_id" : ObjectId("62781619397f5676b18ace1b"), "srn" : 6, "sname" : "soni", "degree" : "BBA", "sem" : 4, "CGPA" : 7.9 }
+{ "_id" : ObjectId("62781638397f5676b18ace1c"), "srn" : 7, "sname" : "xxxxxxxx", "degree" : "Bsc", "sem" : 5, "CGPA" : 7.3 }
+{ "_id" : ObjectId("627816af397f5676b18ace1d"), "srn" : 9, "sname" : "Don", "degree" : "Bsc", "sem" : 1, "CGPA" : 7.3 }
+{ "_id" : ObjectId("627816c6397f5676b18ace1e"), "srn" : 10, "sname" : "Binoy", "degree" : "Bcom", "sem" : 1, "CGPA" : 7.6 }
+{ "_id" : ObjectId("627826b2397f5676b18ace1f"), "srn" : 2, "sname" : "Manu", "degree" : "BCA", "sem" : 6, "CGPA" : 4.8 }
+>
