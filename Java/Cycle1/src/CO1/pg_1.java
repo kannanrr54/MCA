@@ -1,4 +1,4 @@
-bnpackage CO1;
+package CO1;
 import java.util.*;
 class p{
 	String pcode,pname;

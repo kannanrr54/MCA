@@ -1,0 +1,14 @@
+package CO3;
+class FindArea{
+	void area(int a){
+		System.out.println("Area of Square is "+a*a); 
+	 }
+	void area(int a,int b){
+		System.out.println("Area of Square is "+a*b); 
+	 }
+}
+public class CO3_1 {
+ public static void main(String [] args){
+	 System.out.println("Area of Square\nEnter the length of one side : "); 
+ }
+}
