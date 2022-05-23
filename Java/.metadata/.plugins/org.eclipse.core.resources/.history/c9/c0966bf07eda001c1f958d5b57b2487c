@@ -1,0 +1,18 @@
+package CO3;
+class publisher{
+	String pname;
+	publisher(String pname){
+		this.pname=pname;
+	}
+}
+class book extends publisher{
+	String 
+	book(String pname) {
+		super(pname);
+		
+	}
+	
+}
+public class pg_4 {
+
+}

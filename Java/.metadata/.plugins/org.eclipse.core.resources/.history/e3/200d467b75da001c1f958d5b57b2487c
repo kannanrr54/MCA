@@ -35,7 +35,6 @@ class teacher1 extends employee1{
 	void display(){
 		System.out.println("-------------------");
 		System.out.println("Emp_Id : "+id+"\n"+"Teacher_Id : "+tid+"\n"+"Name : "+name+"\n"+"Address : "+address);
-		System.out.println("company_name : "+company_name+"\n"+"qualification : "+qualification+"\n");
 		System.out.println("salary : "+salary+"\n"+"dept : "+dept+"\n"+"subjects : "+subject);
 	}	
 }
