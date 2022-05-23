@@ -1,0 +1,110 @@
+Microsoft Windows [Version 10.0.15063]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+C:\Program Files\MongoDB\Server\5.0\bin>mongo
+MongoDB shell version v5.0.8
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("ee334399-6c4c-46cb-93ee-09cdc4ab09e3") }
+MongoDB server version: 5.0.8
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-05-23T14:56:24.999+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> use candidate
+switched to db candidate
+>  db.details.insert({"name":"Joel","age":25,"gender":"male","amount":45000})
+WriteResult({ "nInserted" : 1 })
+> db.details.insert({"name":"soni","age":24,"gender":"female","amount":46000})
+WriteResult({ "nInserted" : 1 })
+> db.details.insert({"name":"arya","age":23,"gender":"female","amount":41000})
+WriteResult({ "nInserted" : 1 })
+> db.details.insert({"name":"tom","age":29,"gender":"male","amount":41600})
+WriteResult({ "nInserted" : 1 })
+> db.details.insert({"name":"maggi","age":21,"gender":"male","amount":43600})
+WriteResult({ "nInserted" : 1 })
+> db.details.find().pretty()
+{
+        "_id" : ObjectId("628b5f58948f46a3323fea94"),
+        "name" : "Jes",
+        "age" : 27,
+        "gender" : "male",
+        "amount" : 4500
+}
+{
+        "_id" : ObjectId("628b605878c5e79f3346d876"),
+        "name" : "Joel",
+        "age" : 25,
+        "gender" : "male",
+        "amount" : 45000
+}
+{
+        "_id" : ObjectId("628b606c78c5e79f3346d877"),
+        "name" : "soni",
+        "age" : 24,
+        "gender" : "female",
+        "amount" : 46000
+}
+{
+        "_id" : ObjectId("628b608078c5e79f3346d878"),
+        "name" : "arya",
+        "age" : 23,
+        "gender" : "female",
+        "amount" : 41000
+}
+{
+        "_id" : ObjectId("628b609778c5e79f3346d879"),
+        "name" : "tom",
+        "age" : 29,
+        "gender" : "male",
+        "amount" : 41600
+}
+{
+        "_id" : ObjectId("628b60a978c5e79f3346d87a"),
+        "name" : "maggi",
+        "age" : 21,
+        "gender" : "male",
+        "amount" : 43600
+}
+> db.details.find({$or:[{"gender":"male"},{"age":{$lt:25}}]})
+{ "_id" : ObjectId("628b5f58948f46a3323fea94"), "name" : "Jes", "age" : 27, "gender" : "male", "amount" : 4500 }
+{ "_id" : ObjectId("628b605878c5e79f3346d876"), "name" : "Joel", "age" : 25, "gender" : "male", "amount" : 45000 }
+{ "_id" : ObjectId("628b606c78c5e79f3346d877"), "name" : "soni", "age" : 24, "gender" : "female", "amount" : 46000 }
+{ "_id" : ObjectId("628b608078c5e79f3346d878"), "name" : "arya", "age" : 23, "gender" : "female", "amount" : 41000 }
+{ "_id" : ObjectId("628b609778c5e79f3346d879"), "name" : "tom", "age" : 29, "gender" : "male", "amount" : 41600 }
+{ "_id" : ObjectId("628b60a978c5e79f3346d87a"), "name" : "maggi", "age" : 21, "gender" : "male", "amount" : 43600 }
+> db.details.find({$and:[{"gender":"male"},{"age":{$lt:25}}]})
+{ "_id" : ObjectId("628b60a978c5e79f3346d87a"), "name" : "maggi", "age" : 21, "gender" : "male", "amount" : 43600 }
+> db.details.aggregate([{$group:{_id:"$gender","total amount":{$sum:"$amount"}}}])
+{ "_id" : "female", "total amount" : 87000 }
+{ "_id" : "male", "total amount" : 134700 }
+> db.details.aggregate([{$match:{"age":{$gt:25}}},{$group:{_id:"$gender","total amount":{$avg:"$amount"}}}])
+{ "_id" : "male", "total amount" : 23050 }
+> db.details.aggregate([{$match:{"age":{$gt:25}}},{$group:{_id:"$gender","total amount":{$avg:$amount}}}])
+uncaught exception: ReferenceError: $amount is not defined :
+@(shell):1:88
+> db.details.aggregate([{$match:{"age":{$gt:25}}},{$group:{_id:"$gender","total amount":{$avg:amount}}}])
+uncaught exception: ReferenceError: amount is not defined :
+@(shell):1:88
+> db.details.aggregate([{$match:{"age":{$gt:25}}},{$group:{_id:"$gender","total amount":{$avg:"$amount"}}}])
+{ "_id" : "male", "total amount" : 23050 }
+> db.details.aggregate([{$match:{"age":{$gt:25}}},{$group:{_id:"$gender","total amount":{$avg:"$amount"}}},{$sort:{avg:1}}])
+{ "_id" : "male", "total amount" : 23050 }
+>
