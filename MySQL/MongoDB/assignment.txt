@@ -1,0 +1,507 @@
+Microsoft Windows [Version 10.0.15063]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+C:\Program Files\MongoDB\Server\5.0\bin>mongo
+MongoDB shell version v5.0.8
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("14182e7a-6961-445d-81cd-f4f3e55732fa") }
+MongoDB server version: 5.0.8
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-05-23T14:56:24.999+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show databases
+admin      0.000GB
+candidate  0.000GB
+config     0.000GB
+employee   0.000GB
+local      0.000GB
+newdb      0.000GB
+student    0.000GB
+trial      0.000GB
+> use college
+switched to db college
+> db.createCollection(studlist)
+uncaught exception: ReferenceError: studlist is not defined :
+@(shell):1:1
+> db.createCollection("studlist")
+{ "ok" : 1 }
+> db.studlist.insert({fname:"Jes",lname:"john",grade:"a+",mark:45,contact:"9875658747",Location:"Kollam",department:"Mechanical,gender:"female"})
+undb.studlist.insert({fname:"Tom",lname:"cruze",grade:"b+",mark:67,contact:"12342134532",Location:"Thiruvananthapuram",department:"MCA",gender:"male"
+... .studlist.insert({fname:"Tom",lname:"cruze",grade:"b+",mark:67,contact:"12342134532",Location:"Thiruvananthapuram",department:"MCA",gender:"male"
+... .studlist.insert({fname:"Tom",lname:"cruze",grade:"b+",mark:67,contact:"12342134532",Location:"Thiruvananthapuram",department:"MCA",gender:"male"}
+> db.studlist.insert({fname:"Tom",lname:"cruze",grade:"b+",mark:67,contact:"12342134532",Location:"Thiruvananthapuram",department:"MCA",gender:"male"})
+> db.studlist.insert({fname:"Tom",lname:"cruze",grade:"b+",mark:67,contact:"12342134532",Location:"Thiruvananthapuram",department:"MCA",gender:"male"})
+> db.studlist.insert({fname:"Tom",lname:"cruze",grade:"b+",mark:67,contact:"12342134532",Location:"Thiruvananthapuram",department:"MCA",gender:"male"})
+> db.studlist.insert({fname:"Tom",lname:"cruze",grade:"b+",mark:67,contact:"12342134532",Location:"Thiruvananthapuram",department:"MCA",gender:"male"})
+> db.studlist.insert({fname:"Veronika",lname:"tacker",grade:"b+",mark:90,contact:"12342134532",Location:"Thiruvananthapuram",department:"MCA",gender:"female"})
+WriteResult({ "nInserted" : 1 })
+> db.studlist.insert({fname:"Mango",lname:"timmy",grade:"c+",mark:85,contact:"12342134532",Location:"Kollam",department:"Mechanical",gender:"male"})
+WriteResult({ "nInserted" : 1 })
+> db.studlist.insert({fname:"Ethan",lname:"timmy",grade:"a+",mark:90,contact:"12342134532",Location:"Kollam",department:"Mechanical",gender:"female"})
+WriteResult({ "nInserted" : 1 })
+> db.studlist.insert({fname:"Steve",lname:"Rogers",grade:"a+",mark:90,contact:"12342134532",Location:"Thiruvananthapuram",department:"MCA",gender:"male"})
+WriteResult({ "nInserted" : 1 })
+> db.studlist.insert({fname:"cathy",lname:"henry",grade:"b",mark:82,contact:"12342134532",Location:"Thiruvananthapuram",department:"MCA",gender:"female"})
+WriteResult({ "nInserted" : 1 })
+> db.studlist.find({}{fname:1,lname:1})
+uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):1:19
+> db.studlist.find({},{fname:1,lname:1})
+{ "_id" : ObjectId("628d2b0a820835c09a9895a2"), "fname" : "Jes", "lname" : "john" }
+{ "_id" : ObjectId("628d2b57820835c09a9895a3"), "fname" : "Tom", "lname" : "cruze" }
+{ "_id" : ObjectId("628d2bec820835c09a9895a4"), "fname" : "Veronika", "lname" : "tacker" }
+{ "_id" : ObjectId("628d2c6b820835c09a9895a5"), "fname" : "Mango", "lname" : "timmy" }
+{ "_id" : ObjectId("628d2ca3820835c09a9895a6"), "fname" : "Ethan", "lname" : "timmy" }
+{ "_id" : ObjectId("628d2ccf820835c09a9895a7"), "fname" : "Steve", "lname" : "Rogers" }
+{ "_id" : ObjectId("628d2d89820835c09a9895a8"), "fname" : "cathy", "lname" : "henry" }
+> db.studlist.find({},{fname:1,lname:1,_id:0})
+{ "fname" : "Jes", "lname" : "john" }
+{ "fname" : "Tom", "lname" : "cruze" }
+{ "fname" : "Veronika", "lname" : "tacker" }
+{ "fname" : "Mango", "lname" : "timmy" }
+{ "fname" : "Ethan", "lname" : "timmy" }
+{ "fname" : "Steve", "lname" : "Rogers" }
+{ "fname" : "cathy", "lname" : "henry" }
+> db.studlist.find({gender:"female"},{fname:1,lname:1,mark:1,_id:0})
+{ "fname" : "Jes", "lname" : "john", "mark" : 45 }
+{ "fname" : "Veronika", "lname" : "tacker", "mark" : 90 }
+{ "fname" : "Ethan", "lname" : "timmy", "mark" : 90 }
+{ "fname" : "cathy", "lname" : "henry", "mark" : 82 }
+> db.studlist.find({gender:"female",department:"MCA"},{fname:1,lname:1,mark:1,_id:0})
+{ "fname" : "Veronika", "lname" : "tacker", "mark" : 90 }
+{ "fname" : "cathy", "lname" : "henry", "mark" : 82 }
+> db.studlist.find({},{$max:{mark:1}})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "FieldPath field names may not start with '$'. Consider using $getField or $setField.",
+        "code" : 16410,
+        "codeName" : "Location16410"
+}
+> db.stulist.aggregate([{$group:{_id:0,"Max mark":{$max:"$mark"}}}])
+> db.stulist.aggregate([{$group:{_id:null,"Max mark":{$max:"$mark"}}}])
+> db.stulist.aggregate([{$group:{_id:null,"Max mark":{max:"$mark"}}}])
+uncaught exception: Error: command failed: {
+        "ok" : 0,
+        "errmsg" : "The field 'Max mark' must be an accumulator object",
+        "code" : 40234,
+        "codeName" : "Location40234"
+} with original command request: {
+        "aggregate" : "stulist",
+        "pipeline" : [
+                {
+                        "$group" : {
+                                "_id" : null,
+                                "Max mark" : {
+                                        "max" : "$mark"
+                                }
+                        }
+                }
+        ],
+        "cursor" : {
+
+        },
+        "lsid" : {
+                "id" : UUID("14182e7a-6961-445d-81cd-f4f3e55732fa")
+        }
+} on connection: connection to 127.0.0.1:27017 : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:18:14
+_assertCommandWorked@src/mongo/shell/assert.js:737:17
+assert.commandWorked@src/mongo/shell/assert.js:829:16
+DB.prototype._runAggregate@src/mongo/shell/db.js:281:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1058:12
+@(shell):1:1
+> db.stulist.aggregate([{$group:{_id:null,max:{$max:"$mark"}}}])
+> db.stulist.aggregate([{$group:{_id:null,max:{$max:"$mark"}}}])
+> db.studlist.find().sort({mark:1})
+{ "_id" : ObjectId("628d2b0a820835c09a9895a2"), "fname" : "Jes", "lname" : "john", "grade" : "a+", "mark" : 45, "contact" : "9875658747", "Location" : "Kollam", "department" : "Mechanical", "gender" : "female" }
+{ "_id" : ObjectId("628d2b57820835c09a9895a3"), "fname" : "Tom", "lname" : "cruze", "grade" : "b+", "mark" : 67, "contact" : "12342134532", "Location" : "Thiruvananthapuram", "department" : "MCA", "gender" : "male" }
+{ "_id" : ObjectId("628d2d89820835c09a9895a8"), "fname" : "cathy", "lname" : "henry", "grade" : "b", "mark" : 82, "contact" : "12342134532", "Location" : "Thiruvananthapuram", "department" : "MCA", "gender" : "female" }
+{ "_id" : ObjectId("628d2c6b820835c09a9895a5"), "fname" : "Mango", "lname" : "timmy", "grade" : "c+", "mark" : 85, "contact" : "12342134532", "Location" : "Kollam", "department" : "Mechanical", "gender" : "male" }
+{ "_id" : ObjectId("628d2bec820835c09a9895a4"), "fname" : "Veronika", "lname" : "tacker", "grade" : "b+", "mark" : 90, "contact" : "12342134532", "Location" : "Thiruvananthapuram", "department" : "MCA", "gender" : "female" }
+{ "_id" : ObjectId("628d2ca3820835c09a9895a6"), "fname" : "Ethan", "lname" : "timmy", "grade" : "a+", "mark" : 90, "contact" : "12342134532", "Location" : "Kollam", "department" : "Mechanical", "gender" : "female" }
+{ "_id" : ObjectId("628d2ccf820835c09a9895a7"), "fname" : "Steve", "lname" : "Rogers", "grade" : "a+", "mark" : 90, "contact" : "12342134532", "Location" : "Thiruvananthapuram", "department" : "MCA", "gender" : "male" }
+> db.studlist.find().sort({mark:-1})
+{ "_id" : ObjectId("628d2bec820835c09a9895a4"), "fname" : "Veronika", "lname" : "tacker", "grade" : "b+", "mark" : 90, "contact" : "12342134532", "Location" : "Thiruvananthapuram", "department" : "MCA", "gender" : "female" }
+{ "_id" : ObjectId("628d2ca3820835c09a9895a6"), "fname" : "Ethan", "lname" : "timmy", "grade" : "a+", "mark" : 90, "contact" : "12342134532", "Location" : "Kollam", "department" : "Mechanical", "gender" : "female" }
+{ "_id" : ObjectId("628d2ccf820835c09a9895a7"), "fname" : "Steve", "lname" : "Rogers", "grade" : "a+", "mark" : 90, "contact" : "12342134532", "Location" : "Thiruvananthapuram", "department" : "MCA", "gender" : "male" }
+{ "_id" : ObjectId("628d2c6b820835c09a9895a5"), "fname" : "Mango", "lname" : "timmy", "grade" : "c+", "mark" : 85, "contact" : "12342134532", "Location" : "Kollam", "department" : "Mechanical", "gender" : "male" }
+{ "_id" : ObjectId("628d2d89820835c09a9895a8"), "fname" : "cathy", "lname" : "henry", "grade" : "b", "mark" : 82, "contact" : "12342134532", "Location" : "Thiruvananthapuram", "department" : "MCA", "gender" : "female" }
+{ "_id" : ObjectId("628d2b57820835c09a9895a3"), "fname" : "Tom", "lname" : "cruze", "grade" : "b+", "mark" : 67, "contact" : "12342134532", "Location" : "Thiruvananthapuram", "department" : "MCA", "gender" : "male" }
+{ "_id" : ObjectId("628d2b0a820835c09a9895a2"), "fname" : "Jes", "lname" : "john", "grade" : "a+", "mark" : 45, "contact" : "9875658747", "Location" : "Kollam", "department" : "Mechanical", "gender" : "female" }
+> db.studlist.find().sort({mark:-1}).limit(1)
+{ "_id" : ObjectId("628d2bec820835c09a9895a4"), "fname" : "Veronika", "lname" : "tacker", "grade" : "b+", "mark" : 90, "contact" : "12342134532", "Location" : "Thiruvananthapuram", "department" : "MCA", "gender" : "female" }
+> db.stulist.aggregate([{$project:{_id:null,"Max mark":{max:"$mark"}}}])
+> db.stulist.aggregate([{$project:{"Max mark":{max:"$mark"}}}])
+> db.stulist.aggregate([{$project:{"Max mark":{max:$mark}}}])
+uncaught exception: ReferenceError: $mark is not defined :
+@(shell):1:46
+> db.studlist.find().sort({mark:-1}).limit(3)
+{ "_id" : ObjectId("628d2ccf820835c09a9895a7"), "fname" : "Steve", "lname" : "Rogers", "grade" : "a+", "mark" : 90, "contact" : "12342134532", "Location" : "Thiruvananthapuram", "department" : "MCA", "gender" : "male" }
+{ "_id" : ObjectId("628d2ca3820835c09a9895a6"), "fname" : "Ethan", "lname" : "timmy", "grade" : "a+", "mark" : 90, "contact" : "12342134532", "Location" : "Kollam", "department" : "Mechanical", "gender" : "female" }
+{ "_id" : ObjectId("628d2bec820835c09a9895a4"), "fname" : "Veronika", "lname" : "tacker", "grade" : "b+", "mark" : 90, "contact" : "12342134532", "Location" : "Thiruvananthapuram", "department" : "MCA", "gender" : "female" }
+> db.stulist.aggregate([{$project:{Max mark:{$max:$mark}}}])
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:37
+> db.stulist.aggregate([{$project:{Max mark:{$max:"$mark"}}}])
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:37
+> db.stulist.aggregate([{$project:{Max:{$max:"$mark"}}}])
+> db.stulist.aggregate([{$project:{"Max":{$max:"$mark"}}}])
+> db.studlist.aggregate([{$project:{"Max":{$max:"$mark"}}}])
+{ "_id" : ObjectId("628d2b0a820835c09a9895a2"), "Max" : 45 }
+{ "_id" : ObjectId("628d2b57820835c09a9895a3"), "Max" : 67 }
+{ "_id" : ObjectId("628d2bec820835c09a9895a4"), "Max" : 90 }
+{ "_id" : ObjectId("628d2c6b820835c09a9895a5"), "Max" : 85 }
+{ "_id" : ObjectId("628d2ca3820835c09a9895a6"), "Max" : 90 }
+{ "_id" : ObjectId("628d2ccf820835c09a9895a7"), "Max" : 90 }
+{ "_id" : ObjectId("628d2d89820835c09a9895a8"), "Max" : 82 }
+> db.studlist.aggregate([{$project:{Max:{$max:"$mark"}}}])
+{ "_id" : ObjectId("628d2b0a820835c09a9895a2"), "Max" : 45 }
+{ "_id" : ObjectId("628d2b57820835c09a9895a3"), "Max" : 67 }
+{ "_id" : ObjectId("628d2bec820835c09a9895a4"), "Max" : 90 }
+{ "_id" : ObjectId("628d2c6b820835c09a9895a5"), "Max" : 85 }
+{ "_id" : ObjectId("628d2ca3820835c09a9895a6"), "Max" : 90 }
+{ "_id" : ObjectId("628d2ccf820835c09a9895a7"), "Max" : 90 }
+{ "_id" : ObjectId("628d2d89820835c09a9895a8"), "Max" : 82 }
+> db.studlist.aggregate([{$group:{_id:0,"Max mark":{$max:"$mark"}}}])
+{ "_id" : 0, "Max mark" : 90 }
+> db.studlist.aggregate([{$group:{_id:0}}])
+{ "_id" : 0 }
+> db.studlist.aggregate([{$group:{"Max mark":{$max:"$mark"}}}])
+uncaught exception: Error: command failed: {
+        "ok" : 0,
+        "errmsg" : "a group specification must include an _id",
+        "code" : 15955,
+        "codeName" : "Location15955"
+} with original command request: {
+        "aggregate" : "studlist",
+        "pipeline" : [
+                {
+                        "$group" : {
+                                "Max mark" : {
+                                        "$max" : "$mark"
+                                }
+                        }
+                }
+        ],
+        "cursor" : {
+
+        },
+        "lsid" : {
+                "id" : UUID("14182e7a-6961-445d-81cd-f4f3e55732fa")
+        }
+} on connection: connection to 127.0.0.1:27017 : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:18:14
+_assertCommandWorked@src/mongo/shell/assert.js:737:17
+assert.commandWorked@src/mongo/shell/assert.js:829:16
+DB.prototype._runAggregate@src/mongo/shell/db.js:281:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1058:12
+@(shell):1:1
+> db.studlist.aggregate([{$group:{_id:0,"Max mark":{$max:"$mark"}}}])
+{ "_id" : 0, "Max mark" : 90 }
+> db.studlist.aggregate([{$group:{"Max mark":{$max:"$mark"}}}])
+uncaught exception: Error: command failed: {
+        "ok" : 0,
+        "errmsg" : "a group specification must include an _id",
+        "code" : 15955,
+        "codeName" : "Location15955"
+} with original command request: {
+        "aggregate" : "studlist",
+        "pipeline" : [
+                {
+                        "$group" : {
+                                "Max mark" : {
+                                        "$max" : "$mark"
+                                }
+                        }
+                }
+        ],
+        "cursor" : {
+
+        },
+        "lsid" : {
+                "id" : UUID("14182e7a-6961-445d-81cd-f4f3e55732fa")
+        }
+} on connection: connection to 127.0.0.1:27017 : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:18:14
+_assertCommandWorked@src/mongo/shell/assert.js:737:17
+assert.commandWorked@src/mongo/shell/assert.js:829:16
+DB.prototype._runAggregate@src/mongo/shell/db.js:281:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1058:12
+@(shell):1:1
+> db.studlist.aggregate([{$group:{_id:1,"Max mark":{$max:"$mark"}}}])
+{ "_id" : 1, "Max mark" : 90 }
+> db.studlist.aggregate([{$group:{_id:,"Max mark":{$max:"$mark"}}}])
+uncaught exception: SyntaxError: expected expression, got ',' :
+@(shell):1:36
+> db.studlist.aggregate([{$group:{_id:_id,"Max mark":{$max:"$mark"}}}])
+uncaught exception: ReferenceError: _id is not defined :
+@(shell):1:33
+> db.studlist.aggregate([{$group:{_id:"$_id","Max mark":{$max:"$mark"}}}])
+{ "_id" : ObjectId("628d2bec820835c09a9895a4"), "Max mark" : 90 }
+{ "_id" : ObjectId("628d2d89820835c09a9895a8"), "Max mark" : 82 }
+{ "_id" : ObjectId("628d2ccf820835c09a9895a7"), "Max mark" : 90 }
+{ "_id" : ObjectId("628d2b0a820835c09a9895a2"), "Max mark" : 45 }
+{ "_id" : ObjectId("628d2b57820835c09a9895a3"), "Max mark" : 67 }
+{ "_id" : ObjectId("628d2ca3820835c09a9895a6"), "Max mark" : 90 }
+{ "_id" : ObjectId("628d2c6b820835c09a9895a5"), "Max mark" : 85 }
+> db.studlist.aggregate([{$group:{_id:"","Max mark":{$max:"$mark"}}}])
+{ "_id" : "", "Max mark" : 90 }
+> db.studlist.aggregate([{$group:{,"Max mark":{$max:"$mark"}}}])
+uncaught exception: SyntaxError: expected property name, got ',' :
+@(shell):1:32
+> db.studlist.aggregate([{$group:{{},"Max mark":{$max:"$mark"}}}])
+uncaught exception: SyntaxError: expected property name, got '{' :
+@(shell):1:32
+> db.studlist.aggregate([{$match:{"Max mark":{$max:"$mark"}}}])
+uncaught exception: Error: command failed: {
+        "ok" : 0,
+        "errmsg" : "unknown operator: $max",
+        "code" : 2,
+        "codeName" : "BadValue"
+} with original command request: {
+        "aggregate" : "studlist",
+        "pipeline" : [
+                {
+                        "$match" : {
+                                "Max mark" : {
+                                        "$max" : "$mark"
+                                }
+                        }
+                }
+        ],
+        "cursor" : {
+
+        },
+        "lsid" : {
+                "id" : UUID("14182e7a-6961-445d-81cd-f4f3e55732fa")
+        }
+} on connection: connection to 127.0.0.1:27017 : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:18:14
+_assertCommandWorked@src/mongo/shell/assert.js:737:17
+assert.commandWorked@src/mongo/shell/assert.js:829:16
+DB.prototype._runAggregate@src/mongo/shell/db.js:281:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1058:12
+@(shell):1:1
+> db.studlist.aggregate([{$group:{_id:0,"Max mark":{$max:"$mark"}}}])
+{ "_id" : 0, "Max mark" : 90 }
+> db.studlist.aggregate([{$group:{_id:null,"Max mark":{$max:"$mark"}}}])
+{ "_id" : null, "Max mark" : 90 }
+> db.studlist.aggregate([{$group:{_id:"max","Max mark":{$max:"$mark"}}}])
+{ "_id" : "max", "Max mark" : 90 }
+> db.studlist.aggregate([{$group:{_id:0,"Max mark":{$max:"$mark"}}}])
+{ "_id" : 0, "Max mark" : 90 }
+> db.studlist.aggregate([{$match:{gender:"female"}}{$group:{_id:0,"Max mark":{$max:"$mark"}}}])
+uncaught exception: SyntaxError: missing ] after element list :
+@(shell):1:49
+> db.studlist.aggregate([{$match:{gender:"female"}},{$group:{_id:0,"Max mark":{$max:"$mark"}}}])
+{ "_id" : 0, "Max mark" : 90 }
+> db.studlist.aggregate([{$match:{gender:"female"}},{$group:{_id:0,"Max mark":{$gt:"$mark"}}}])
+uncaught exception: Error: command failed: {
+        "ok" : 0,
+        "errmsg" : "unknown group operator '$gt'",
+        "code" : 15952,
+        "codeName" : "Location15952"
+} with original command request: {
+        "aggregate" : "studlist",
+        "pipeline" : [
+                {
+                        "$match" : {
+                                "gender" : "female"
+                        }
+                },
+                {
+                        "$group" : {
+                                "_id" : 0,
+                                "Max mark" : {
+                                        "$gt" : "$mark"
+                                }
+                        }
+                }
+        ],
+        "cursor" : {
+
+        },
+        "lsid" : {
+                "id" : UUID("14182e7a-6961-445d-81cd-f4f3e55732fa")
+        }
+} on connection: connection to 127.0.0.1:27017 : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:18:14
+_assertCommandWorked@src/mongo/shell/assert.js:737:17
+assert.commandWorked@src/mongo/shell/assert.js:829:16
+DB.prototype._runAggregate@src/mongo/shell/db.js:281:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1058:12
+@(shell):1:1
+> db.studlist.aggregate([{$match:{gender:"female"}},{$group:{_id:0,"Max mark":{$gt:mark}}}])
+uncaught exception: ReferenceError: mark is not defined :
+@(shell):1:78
+> db.studlist.aggregate([{$match:{gender:"female"}},{$group:{_id:"$gender"}}}])
+uncaught exception: SyntaxError: missing ] after element list :
+@(shell):1:74
+> db.studlist.aggregate([{$group:{_id:"$gender"}}}])
+uncaught exception: SyntaxError: missing ] after element list :
+@(shell):1:47
+> db.studlist.aggregate([{$group:{_id:"$gender"}}])
+{ "_id" : "male" }
+{ "_id" : "female" }
+> db.studlist.aggregate([{$group:{_id:"$gender"}},{$match:{gender:"female"}}])
+> db.studlist.aggregate([{$group:{_id:"$gender"}}])
+{ "_id" : "male" }
+{ "_id" : "female" }
+> db.studlist.aggregate([{$match:{gender:"female"}},{$group:{_id:"$gender"}}])
+{ "_id" : "female" }
+> db.studlist.aggregate([{$match:{mark:{$gt:50}}},{$group:{_id:"$gender","Sum":{$sum:"$mark"}}}])
+{ "_id" : "male", "Sum" : 242 }
+{ "_id" : "female", "Sum" : 262 }
+> db.studlist.aggregate([{$match:{mark:{$gt:50}}},{$group:{_id:"$gender","Sum":{"$mark"}}}])
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:85
+> db.studlist.aggregate([{$match:{mark:{$gt:50}}},{$group:{_id:"$gender","Sum":"$mark"}}])
+uncaught exception: Error: command failed: {
+        "ok" : 0,
+        "errmsg" : "The field 'Sum' must be an accumulator object",
+        "code" : 40234,
+        "codeName" : "Location40234"
+} with original command request: {
+        "aggregate" : "studlist",
+        "pipeline" : [
+                {
+                        "$match" : {
+                                "mark" : {
+                                        "$gt" : 50
+                                }
+                        }
+                },
+                {
+                        "$group" : {
+                                "_id" : "$gender",
+                                "Sum" : "$mark"
+                        }
+                }
+        ],
+        "cursor" : {
+
+        },
+        "lsid" : {
+                "id" : UUID("14182e7a-6961-445d-81cd-f4f3e55732fa")
+        }
+} on connection: connection to 127.0.0.1:27017 : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:18:14
+_assertCommandWorked@src/mongo/shell/assert.js:737:17
+assert.commandWorked@src/mongo/shell/assert.js:829:16
+DB.prototype._runAggregate@src/mongo/shell/db.js:281:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1058:12
+@(shell):1:1
+> db.studlist.aggregate([{$match:{mark:{$gt:50}}},{$group:{_id:"$gender","$mark"}}])
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:78
+> db.studlist.aggregate([{$match:{mark:{$gt:50}}},{$group:{_id:"$gender",mark}}])
+uncaught exception: ReferenceError: mark is not defined :
+@(shell):1:72
+> db.studlist.aggregate([{$match:{mark:{$gt:50}}},{$group:{_id:"$gender","mark"}}])
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:77
+> db.studlist.aggregate([{$match:{mark:{$gt:50}}},{$group:{_id:"$gender","Sum":{$:"$mark"}}}])
+uncaught exception: Error: command failed: {
+        "ok" : 0,
+        "errmsg" : "unknown group operator '$'",
+        "code" : 15952,
+        "codeName" : "Location15952"
+} with original command request: {
+        "aggregate" : "studlist",
+        "pipeline" : [
+                {
+                        "$match" : {
+                                "mark" : {
+                                        "$gt" : 50
+                                }
+                        }
+                },
+                {
+                        "$group" : {
+                                "_id" : "$gender",
+                                "Sum" : {
+                                        "$" : "$mark"
+                                }
+                        }
+                }
+        ],
+        "cursor" : {
+
+        },
+        "lsid" : {
+                "id" : UUID("14182e7a-6961-445d-81cd-f4f3e55732fa")
+        }
+} on connection: connection to 127.0.0.1:27017 : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:18:14
+_assertCommandWorked@src/mongo/shell/assert.js:737:17
+assert.commandWorked@src/mongo/shell/assert.js:829:16
+DB.prototype._runAggregate@src/mongo/shell/db.js:281:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1058:12
+@(shell):1:1
+> db.studlist.aggregate([{$match:{mark:{$gt:50}}},{$group:{_id:"$gender","Sum":{:"$mark"}}}])
+uncaught exception: SyntaxError: expected property name, got ':' :
+@(shell):1:78
+> db.studlist.aggregate([{$match:{mark:{$gt:50}}},{$group:{_id:"$gender","Sum":{$first:"$mark"}}}])
+{ "_id" : "female", "Sum" : 90 }
+{ "_id" : "male", "Sum" : 67 }
+> db.studlist.aggregate([{$match:{mark:{$gt:90}}},{$group:{_id:"$gender","Sum":{$first:"$mark"}}}])
+> db.studlist.aggregate([{$match:{mark:{$gt:50}}},{$group:{_id:"$gender","Sum":{$first:"$mark"}}}])
+{ "_id" : "male", "Sum" : 67 }
+{ "_id" : "female", "Sum" : 90 }
+> db.studlist.aggregate([{$match:{mark:{$gt:50}}}}}])
+uncaught exception: SyntaxError: missing ] after element list :
+@(shell):1:47
+> db.studlist.aggregate([{$match:{mark:{$gt:50}}}}])
+uncaught exception: SyntaxError: missing ] after element list :
+@(shell):1:47
+> db.studlist.aggregate([{$match:{mark:{$gt:50}}}])
+{ "_id" : ObjectId("628d2b57820835c09a9895a3"), "fname" : "Tom", "lname" : "cruze", "grade" : "b+", "mark" : 67, "contact" : "12342134532", "Location" : "Thiruvananthapuram", "department" : "MCA", "gender" : "male" }
+{ "_id" : ObjectId("628d2bec820835c09a9895a4"), "fname" : "Veronika", "lname" : "tacker", "grade" : "b+", "mark" : 90, "contact" : "12342134532", "Location" : "Thiruvananthapuram", "department" : "MCA", "gender" : "female" }
+{ "_id" : ObjectId("628d2c6b820835c09a9895a5"), "fname" : "Mango", "lname" : "timmy", "grade" : "c+", "mark" : 85, "contact" : "12342134532", "Location" : "Kollam", "department" : "Mechanical", "gender" : "male" }
+{ "_id" : ObjectId("628d2ca3820835c09a9895a6"), "fname" : "Ethan", "lname" : "timmy", "grade" : "a+", "mark" : 90, "contact" : "12342134532", "Location" : "Kollam", "department" : "Mechanical", "gender" : "female" }
+{ "_id" : ObjectId("628d2ccf820835c09a9895a7"), "fname" : "Steve", "lname" : "Rogers", "grade" : "a+", "mark" : 90, "contact" : "12342134532", "Location" : "Thiruvananthapuram", "department" : "MCA", "gender" : "male" }
+{ "_id" : ObjectId("628d2d89820835c09a9895a8"), "fname" : "cathy", "lname" : "henry", "grade" : "b", "mark" : 82, "contact" : "12342134532", "Location" : "Thiruvananthapuram", "department" : "MCA", "gender" : "female" }
+> db.studlist.aggregate([{$match:{mark:{$gt:50},gender:"female"}}])
+{ "_id" : ObjectId("628d2bec820835c09a9895a4"), "fname" : "Veronika", "lname" : "tacker", "grade" : "b+", "mark" : 90, "contact" : "12342134532", "Location" : "Thiruvananthapuram", "department" : "MCA", "gender" : "female" }
+{ "_id" : ObjectId("628d2ca3820835c09a9895a6"), "fname" : "Ethan", "lname" : "timmy", "grade" : "a+", "mark" : 90, "contact" : "12342134532", "Location" : "Kollam", "department" : "Mechanical", "gender" : "female" }
+{ "_id" : ObjectId("628d2d89820835c09a9895a8"), "fname" : "cathy", "lname" : "henry", "grade" : "b", "mark" : 82, "contact" : "12342134532", "Location" : "Thiruvananthapuram", "department" : "MCA", "gender" : "female" }
+> db.studlist.aggregate([{$group:{_id:0,"Max mark":{$max:"$mark"}}}])
+{ "_id" : 0, "Max mark" : 90 }
+> db.studlist.aggregate([{$match:{department:}}{$group:{_id:0,"Max mark":{$max:"$mark"},}}])
+uncaught exception: SyntaxError: expected expression, got '}' :
+@(shell):1:43
+> db.studlist.aggregate([{$match:{department:"MCA"}}{$group:{_id:0,"Max mark":{$max:"$mark"},}}])
+uncaught exception: SyntaxError: missing ] after element list :
+@(shell):1:50
+> db.studlist.aggregate([{$match:{department:"MCA"}},{$group:{_id:0,"Max mark":{$max:"$mark"}}}])
+{ "_id" : 0, "Max mark" : 90 }
+> db.studlist.aggregate([{$match:{department:"MCA"}},{$group:{_id:0,"Max mark":{$max:"$mark"},"Department":{$first:"$department"}}}])
+{ "_id" : 0, "Max mark" : 90, "Department" : "MCA" }
+>
