@@ -44,14 +44,15 @@ public class pg_4 {
 		System.out.println("Enter the Book");
 		String bname=s.nextLine();
 		System.out.println("Enter the Genere");
-		String gen=s.nextLine();
-		if(gen.equals("Fiction")){
+		if(s.nextLine().equals("Fiction")){
 			Fiction f=new Fiction(pname,bname,author);
 			f.disp();
 		}
-		else if(gen.equals("Literature")){
+		else{
 			Literature l =new Literature(pname,bname,author);
 			l.disp();
 		}
+		
+		
 	}
 }
