@@ -1,0 +1,27 @@
+administator
+1)mongodump
+2)mongorestore
+3)mongodump --db=employee
+4)mongorestore --db=employee dump/employee
+5)mongodump --db college --collection studlist
+6)mongorestore --db college --collection studlist dump/college/studlist.bson
+7)mongostat
+shell
+1)show dbs
+2)use employee
+3)db.dropDatabase()
+4)show dbs
+5)show dbs
+6) use employee
+7)db.dropDatabase
+8) use college
+9)show collections
+10)db.studlist.drop()
+---------------------------------------
+co7
+-----
+C:\Program Files\MongoDB\Server\5.0\bin>start mongod -replSet qwerty -logpath \data\rs2\2.log -dbpath \data\rs2 --port 27019
+
+C:\Program Files\MongoDB\Server\5.0\bin>start mongod -replSet qwerty -logpath \data\rs3\3.log -dbpath \data\rs3 --port 27020
+
+C:\Program Files\MongoDB\Server\5.0\bin>start mongod -replSet qwerty -logpath \data\rs1\1.log -dbpath \data\rs1 --port 27018

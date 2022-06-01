@@ -6,15 +6,17 @@ class publisher{
 	}
 }
 class book extends publisher{
-	String bname;
-	book(String pname,String bname) {
+	String bname,author;
+	book(String pname,String bname,String author) {
 		super(pname);
+		this.bname=bname;
+		this.author=author;
 	}
 }
-class Literature extends publisher{
+class Literature extends book{
 String author;
-	Literature(String pname,String author) {
-		super(pname,bname);
+	Literature(String pname,String bname,String author) {
+		super(pname,bname,author);
 		this.author=author;
 	}
 	void disp(){
