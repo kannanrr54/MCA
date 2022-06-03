@@ -1,0 +1,148 @@
+$ sudo apt install php-cli php-gd php-mysql php-intl php-mbstring 
+
+output
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  bridge-utils ubuntu-fan
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  php7.0-cli php7.0-common php7.0-gd php7.0-intl php7.0-json php7.0-mbstring php7.0-mysql php7.0-opcache php7.0-readline
+Suggested packages:
+  php-pear
+The following NEW packages will be installed:
+  php-cli php-gd php-intl php-mbstring php-mysql php7.0-cli php7.0-common php7.0-gd php7.0-intl php7.0-json php7.0-mbstring php7.0-mysql
+  php7.0-opcache php7.0-readline
+0 upgraded, 14 newly installed, 0 to remove and 355 not upgraded.
+Need to get 2,989 kB of archives.
+After this operation, 12.2 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://in.archive.ubuntu.com/ubuntu xenial-updates/main amd64 php7.0-common amd64 7.0.33-0ubuntu0.16.04.16 [845 kB]
+Get:2 http://in.archive.ubuntu.com/ubuntu xenial-updates/main amd64 php7.0-json amd64 7.0.33-0ubuntu0.16.04.16 [16.9 kB]
+Get:3 http://in.archive.ubuntu.com/ubuntu xenial-updates/main amd64 php7.0-opcache amd64 7.0.33-0ubuntu0.16.04.16 [77.2 kB]
+Get:4 http://in.archive.ubuntu.com/ubuntu xenial-updates/main amd64 php7.0-readline amd64 7.0.33-0ubuntu0.16.04.16 [12.8 kB]
+Get:5 http://in.archive.ubuntu.com/ubuntu xenial-updates/main amd64 php7.0-cli amd64 7.0.33-0ubuntu0.16.04.16 [1,283 kB]
+Get:6 http://in.archive.ubuntu.com/ubuntu xenial-updates/main amd64 php-cli all 1:7.0+35ubuntu6.1 [2,946 B]
+Get:7 http://in.archive.ubuntu.com/ubuntu xenial-updates/main amd64 php7.0-gd amd64 7.0.33-0ubuntu0.16.04.16 [27.2 kB]
+Get:8 http://in.archive.ubuntu.com/ubuntu xenial-updates/main amd64 php-gd all 1:7.0+35ubuntu6.1 [1,924 B]
+Get:9 http://in.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 php7.0-intl amd64 7.0.33-0ubuntu0.16.04.16 [126 kB]
+Get:10 http://in.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 php-intl all 1:7.0+35ubuntu6.1 [1,934 B]
+Get:11 http://in.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 php7.0-mbstring amd64 7.0.33-0ubuntu0.16.04.16 [466 kB]
+Get:12 http://in.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 php-mbstring all 1:7.0+35ubuntu6.1 [1,940 B]
+Get:13 http://in.archive.ubuntu.com/ubuntu xenial-updates/main amd64 php7.0-mysql amd64 7.0.33-0ubuntu0.16.04.16 [124 kB]
+Get:14 http://in.archive.ubuntu.com/ubuntu xenial-updates/main amd64 php-mysql all 1:7.0+35ubuntu6.1 [1,928 B]
+Fetched 2,989 kB in 1s (2,778 kB/s)   
+Selecting previously unselected package php7.0-common.
+(Reading database ... 215582 files and directories currently installed.)
+Preparing to unpack .../php7.0-common_7.0.33-0ubuntu0.16.04.16_amd64.deb ...
+Unpacking php7.0-common (7.0.33-0ubuntu0.16.04.16) ...
+Selecting previously unselected package php7.0-json.
+Preparing to unpack .../php7.0-json_7.0.33-0ubuntu0.16.04.16_amd64.deb ...
+Unpacking php7.0-json (7.0.33-0ubuntu0.16.04.16) ...
+Selecting previously unselected package php7.0-opcache.
+Preparing to unpack .../php7.0-opcache_7.0.33-0ubuntu0.16.04.16_amd64.deb ...
+Unpacking php7.0-opcache (7.0.33-0ubuntu0.16.04.16) ...
+Selecting previously unselected package php7.0-readline.
+Preparing to unpack .../php7.0-readline_7.0.33-0ubuntu0.16.04.16_amd64.deb ...
+Unpacking php7.0-readline (7.0.33-0ubuntu0.16.04.16) ...
+Selecting previously unselected package php7.0-cli.
+Preparing to unpack .../php7.0-cli_7.0.33-0ubuntu0.16.04.16_amd64.deb ...
+Unpacking php7.0-cli (7.0.33-0ubuntu0.16.04.16) ...
+Selecting previously unselected package php-cli.
+Preparing to unpack .../php-cli_1%3a7.0+35ubuntu6.1_all.deb ...
+Unpacking php-cli (1:7.0+35ubuntu6.1) ...
+Selecting previously unselected package php7.0-gd.
+Preparing to unpack .../php7.0-gd_7.0.33-0ubuntu0.16.04.16_amd64.deb ...
+Unpacking php7.0-gd (7.0.33-0ubuntu0.16.04.16) ...
+Selecting previously unselected package php-gd.
+Preparing to unpack .../php-gd_1%3a7.0+35ubuntu6.1_all.deb ...
+Unpacking php-gd (1:7.0+35ubuntu6.1) ...
+Selecting previously unselected package php7.0-intl.
+Preparing to unpack .../php7.0-intl_7.0.33-0ubuntu0.16.04.16_amd64.deb ...
+Unpacking php7.0-intl (7.0.33-0ubuntu0.16.04.16) ...
+Selecting previously unselected package php-intl.
+Preparing to unpack .../php-intl_1%3a7.0+35ubuntu6.1_all.deb ...
+Unpacking php-intl (1:7.0+35ubuntu6.1) ...
+Selecting previously unselected package php7.0-mbstring.
+Preparing to unpack .../php7.0-mbstring_7.0.33-0ubuntu0.16.04.16_amd64.deb ...
+Unpacking php7.0-mbstring (7.0.33-0ubuntu0.16.04.16) ...
+Selecting previously unselected package php-mbstring.
+Preparing to unpack .../php-mbstring_1%3a7.0+35ubuntu6.1_all.deb ...
+Unpacking php-mbstring (1:7.0+35ubuntu6.1) ...
+Selecting previously unselected package php7.0-mysql.
+Preparing to unpack .../php7.0-mysql_7.0.33-0ubuntu0.16.04.16_amd64.deb ...
+Unpacking php7.0-mysql (7.0.33-0ubuntu0.16.04.16) ...
+Selecting previously unselected package php-mysql.
+Preparing to unpack .../php-mysql_1%3a7.0+35ubuntu6.1_all.deb ...
+Unpacking php-mysql (1:7.0+35ubuntu6.1) ...
+Processing triggers for man-db (2.7.5-1) ...
+Setting up php7.0-common (7.0.33-0ubuntu0.16.04.16) ...
+
+Creating config file /etc/php/7.0/mods-available/calendar.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/ctype.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/exif.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/fileinfo.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/ftp.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/gettext.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/iconv.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/pdo.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/phar.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/posix.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/shmop.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sockets.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sysvmsg.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sysvsem.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sysvshm.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/tokenizer.ini with new version
+Setting up php7.0-json (7.0.33-0ubuntu0.16.04.16) ...
+
+Creating config file /etc/php/7.0/mods-available/json.ini with new version
+Setting up php7.0-opcache (7.0.33-0ubuntu0.16.04.16) ...
+
+Creating config file /etc/php/7.0/mods-available/opcache.ini with new version
+Setting up php7.0-readline (7.0.33-0ubuntu0.16.04.16) ...
+
+Creating config file /etc/php/7.0/mods-available/readline.ini with new version
+Setting up php7.0-cli (7.0.33-0ubuntu0.16.04.16) ...
+update-alternatives: using /usr/bin/php7.0 to provide /usr/bin/php (php) in auto mode
+update-alternatives: using /usr/bin/phar7.0 to provide /usr/bin/phar (phar) in auto mode
+update-alternatives: using /usr/bin/phar.phar7.0 to provide /usr/bin/phar.phar (phar.phar) in auto mode
+
+Creating config file /etc/php/7.0/cli/php.ini with new version
+Setting up php-cli (1:7.0+35ubuntu6.1) ...
+Setting up php7.0-gd (7.0.33-0ubuntu0.16.04.16) ...
+
+Creating config file /etc/php/7.0/mods-available/gd.ini with new version
+Setting up php-gd (1:7.0+35ubuntu6.1) ...
+Setting up php7.0-intl (7.0.33-0ubuntu0.16.04.16) ...
+
+Creating config file /etc/php/7.0/mods-available/intl.ini with new version
+Setting up php-intl (1:7.0+35ubuntu6.1) ...
+Setting up php7.0-mbstring (7.0.33-0ubuntu0.16.04.16) ...
+
+Creating config file /etc/php/7.0/mods-available/mbstring.ini with new version
+Setting up php-mbstring (1:7.0+35ubuntu6.1) ...
+Setting up php7.0-mysql (7.0.33-0ubuntu0.16.04.16) ...
+
+Creating config file /etc/php/7.0/mods-available/mysqlnd.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/mysqli.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/pdo_mysql.ini with new version
+Setting up php-mysql (1:7.0+35ubuntu6.1) ...
