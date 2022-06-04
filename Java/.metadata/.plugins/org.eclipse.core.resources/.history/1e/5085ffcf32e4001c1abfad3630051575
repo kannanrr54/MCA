@@ -1,0 +1,28 @@
+package CO3;
+interface calc{
+	void area();
+	void perimeter();
+}
+class circle implements calc{
+	int l,b,r;
+	circle(int l,int b,int r){
+		this.l=l;
+		this.b=b;
+		this.r=r;
+	}
+	public double area() {
+		return(3.14*r*r);
+	}
+	public void perimeter() {
+	}
+}
+class rectangl implements calc{
+	public void area() {
+		
+	}
+	public void perimeter() {
+	}
+}
+public class pg_6 {
+
+}
