@@ -1,6 +1,6 @@
 package CO3;
 interface student{
-	final String name="Kannan";
+	final static String name="Kannan";
 	final int accademicScore=89;
 	void display();
 	

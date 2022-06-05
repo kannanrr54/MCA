@@ -21,7 +21,6 @@ public class pg_5 {
 	public static void main(String [] args) {
 		result r =new result();
 		r.display();
-		r.name="as";
 	}
 
 }
