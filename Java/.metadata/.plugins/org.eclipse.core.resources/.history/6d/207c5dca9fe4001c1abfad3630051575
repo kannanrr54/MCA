@@ -1,0 +1,26 @@
+package CO3;
+interface calc1{
+	int orderno=12;
+	String date="12/12/2121";
+	int calculate(int t1,int t2);
+}
+class bill implements calc1{
+	int pid,qnty,uprice,total;
+	String name;
+	bill(String name,int pid,int qnty,int uprice,int total){
+		this.name=name;
+		this.pid=pid;
+		this.qnty=qnty;
+		this.uprice=uprice;
+		this.total=total;
+	}
+	public int calculate(int t1,int t2) {
+		return(t1+t2);
+	}
+}
+public class pg_7 {
+	public static void main(String [] args) {
+		bill
+		System.out.print("Order No : "+);
+	}
+}
