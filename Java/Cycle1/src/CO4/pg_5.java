@@ -1,0 +1,25 @@
+package CO4;
+class multiply extends Thread{
+	public void run(){
+		for (int i=0;i<12;i++){
+			System.out.println(i+"*5="+i*5);
+		}
+	}
+}
+class multiply2 extends Thread{
+	public void run(){
+		for (int i=0;i<12;i++){
+			for (int j=0;j<12;j++){
+				
+			}
+			}
+		}
+	}
+public class pg_5 {
+	public static void main(String [] args){
+		multiply m=new multiply();
+		multiply2 m2=new multiply2();
+		m.start();
+		m2.start();
+	}
+}

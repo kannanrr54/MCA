@@ -3,4 +3,5 @@
 <fullyQualifiedTypeName name="CO1.cpu.processor"/>
 <fullyQualifiedTypeName name="CO1.cpu.ram"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>
