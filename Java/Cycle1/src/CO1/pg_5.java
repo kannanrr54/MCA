@@ -10,7 +10,7 @@ class cpu{
 			manufacturer=s;
 		}
 		void display(){
-			System.out.println("Cores - "+cores+"\n"+"Manufacturer - "+manufacturer);
+			System.out.println("Processor - \nCores - "+cores+"\n"+"Manufacturer - "+manufacturer+"\n");
 		}
 	}
 	static class ram{
@@ -21,7 +21,7 @@ class cpu{
 			manufacturer=s;
 		}
 		void display(){
-			System.out.println("Memory - "+mem+"\n"+"Ram Manufacturer - "+manufacturer);
+			System.out.println("Ram - \nMemory - "+mem+"\n"+"Manufacturer - "+manufacturer+"\n");
 		}
 	}
 }

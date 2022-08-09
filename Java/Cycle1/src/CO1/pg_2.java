@@ -9,6 +9,7 @@ class mat{
 		r=s.nextInt();
 		System.out.println("Enter number of rows");
 		c=s.nextInt();
+		System.out.println("Enter matrix");
 		for(int i=0;i<r;i++){
 			for(int j=0;j<c;j++){
 				a[i][j]=s.nextInt();
@@ -19,7 +20,7 @@ class mat{
 	void display(int a[][]){
 		for(int i=0;i<r;i++){
 			for(int j=0;j<c;j++){
-				System.out.print(a[i][j]);
+				System.out.print(a[i][j]+"\t");
 			}
 			System.out.println("");
 		}
