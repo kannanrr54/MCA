@@ -1,0 +1,160 @@
+<html>
+    <style>
+        .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: black;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 0px;
+}
+
+.sidenav #link {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  text-decoration: none;
+  width: 100%;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.sidenav #link:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.sidenav .closebtn {
+  
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;text-align: center;}
+  .sidenav #link {font-size: 18px;text-align: center;}
+}
+        #menu{
+            float:right;
+            padding:10px; 
+            padding-top: 20px;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+        #title{
+            float:left;
+            width:100%;
+            height:60px;
+        }
+        #srch_menu{
+            float:right;
+            padding:10px; 
+            margin-top: 10px;
+            font-size: 20px;
+        }
+        #side_menu{
+            float:left;
+            padding:10px; 
+            margin-top: 10px;
+            margin-left: 20px;
+            font-size: 20px;
+        }
+        #srch{
+            border-radius: 30px;
+            padding-left: 50px;
+            width: 100%;
+            height: 50px;
+            background-image:url("Icons\\search.png");
+            background-repeat: no-repeat;
+            background-position: 15px;
+            background-size: 4%;
+        }
+        #menubar{
+            width: 30%;
+            height: 50px;
+        }
+        #part_2{
+            border:1px solid black;
+            width: 98%;
+            height: 30vw;
+            background-image: url("images\\background1.jpg");
+        }
+        #menu_img{
+            width: 100%;
+            position: absolute;
+        }
+    </style>
+    <head>
+        <title>AnimeWorld</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div id="mySidenav" class="sidenav">
+            <div ><center>
+                <img style="width: 90%;margin-top:20px;"src="Icons\\title_white.png">
+            </center>
+               
+            </div>
+            <br><br>
+            <onclick="closeNav()">
+            <div id="link">About</div>
+            <div id="link">Services</div>
+            <div id="link">Clients</div>
+            <div id="link">Contact</div>
+            <img src="images\\totoro.png" id="menu_img">
+          </div>
+        <div id="main">
+        <div class="row">
+            <div id="menu" class="col-md-1">Sign In</div>
+            <div id="menu" class="col-md-1">Films</div>
+            <div id="menu" class="col-md-1">Series</div>
+            <div id="menu" class="col-md-1">Home</div>
+            <div id="side_menu" class="col-md-1">
+                <img id="menubar" src="Icons\\menu-bar.png" onclick="openNav()">
+            </div>
+            <div id="srch_menu" class="col-md-4">
+                <input type="text" id="srch" placeholder="Search.....">
+            </div>
+            <div id="side_menu" class="col-md-2">
+                <img id="title" src="Icons\\title.png">
+            </div>
+            
+        </div>
+        <center>
+            <div class="row" id="Part_2">
+
+            </div>
+        </center>
+        
+        </div>
+
+    </body>
+    <script>
+        function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+window.addEventListener('mouseup', function(event){
+	if (document.getElementById("mySidenav").style.width!=0){
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+    }
+});
+        </script>
+</html>
