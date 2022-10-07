@@ -27,7 +27,7 @@
             android:layout_margin="5dp"
             android:textSize="20dp"
             android:text="+"
-            android:onClick="click">
+            android:onClick="ops">
         </Button>
         <Button
             android:layout_height="match_parent"
@@ -35,7 +35,7 @@
             android:layout_margin="5dp"
             android:textSize="20dp"
             android:text="-"
-            android:onClick="click">
+            android:onClick="ops">
         </Button>
         <Button
             android:layout_height="match_parent"
@@ -43,7 +43,7 @@
             android:layout_margin="5dp"
             android:textSize="20dp"
             android:text="*"
-            android:onClick="click">
+            android:onClick="ops">
         </Button>
         <Button
             android:layout_height="match_parent"
@@ -51,7 +51,7 @@
             android:layout_margin="5dp"
             android:textSize="20dp"
             android:text="/"
-            android:onClick="click">
+            android:onClick="ops">
         </Button>
         <Button
             android:layout_height="match_parent"

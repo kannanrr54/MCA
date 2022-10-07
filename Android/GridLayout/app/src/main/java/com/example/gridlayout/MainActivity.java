@@ -8,32 +8,40 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    String t="";
+    String t="",op="";
+    int a=0,b=0;
+    TextView d;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        d= (TextView) findViewById(R.id.dis);
     }
     public void click(View view){
         t=t+((Button) view).getText();
-        ((TextView)findViewById(R.id.dis)).setText(t);
+        d.setText(t);
+        a=Integer.parseInt(((Button) view).getText().toString());
+    }
+    public void ops(View view){
+        d.setText("");
+        t="";
+        op=((Button) view).getText().toString();
+        b=a;
     }
     public void clear(View view){
-        ((TextView)findViewById(R.id.dis)).setText("");
+        d.setText("");
         t="";
     }
     public void result(View view){
-        String r=((TextView)findViewById(R.id.dis)).getText().toString();
-        int count=r.length();
-        String a[]=new String[100];
-        a=r.split("");
-        int s=0;
-        for(String i : r.split("")){
-            s++;
-            if(i!="+" && i!="-" &&i!="*" &&i!="/" &&i!="="){
-
-            }
-        }
-        ((TextView)findViewById(R.id.dis)).setText(r.split("")[1]);
+    switch (op){
+        case "+" :
+            d.setText(b+a);
+        case "-" :
+            d.setText(b-a);
+        case "*" :
+            d.setText(b*a);
+        case "/" :
+           d.setText(b/a);
+    }
     }
 }
