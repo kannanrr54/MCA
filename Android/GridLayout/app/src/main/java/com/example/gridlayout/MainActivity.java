@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         for(String i : r.split("")){
             s++;
             if(i!="+" && i!="-" &&i!="*" &&i!="/" &&i!="="){
-                
+
             }
         }
         ((TextView)findViewById(R.id.dis)).setText(r.split("")[1]);
